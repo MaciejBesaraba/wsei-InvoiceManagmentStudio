@@ -58,12 +58,12 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="Core\Definition\IEntityDefinition.cs" />
-        <Compile Include="Core\Definition\IEntityReceiverDefinition.cs" />
-        <Compile Include="Core\Definition\IEntitySupplierDefinition.cs" />
-        <Compile Include="Core\Definition\IInvoiceDefinition.cs" />
-        <Compile Include="Core\Definition\IInvoiceItemDefinition.cs" />
-        <Compile Include="Core\Definition\IInvoicePaymentDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\IEntityDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\IEntityReceiverDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\IEntitySupplierDefinition.cs" />
+        <Compile Include="Core\Definition\Invoice\IInvoiceDefinition.cs" />
+        <Compile Include="Core\Definition\Invoice\IInvoiceItemDefinition.cs" />
+        <Compile Include="Core\Definition\Invoice\IInvoicePaymentDefinition.cs" />
         <Compile Include="Core\Definition\IObjectIdentifier.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>

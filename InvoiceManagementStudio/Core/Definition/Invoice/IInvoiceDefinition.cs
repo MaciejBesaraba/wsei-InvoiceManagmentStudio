@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 
-
-namespace InvoiceManagementStudio.Core.Definition
+namespace InvoiceManagementStudio.Core.Definition.Invoice
 {
 
     public interface IInvoiceDefinition

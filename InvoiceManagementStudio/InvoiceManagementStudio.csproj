@@ -58,6 +58,9 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Core\Definition\IEntityDefinition.cs" />
+        <Compile Include="Core\Definition\IEntityReceiverDefinition.cs" />
+        <Compile Include="Core\Definition\IEntitySupplierDefinition.cs" />
         <Compile Include="Core\Definition\IInvoiceDefinition.cs" />
         <Compile Include="Core\Definition\IInvoiceItemDefinition.cs" />
         <Compile Include="Core\Definition\IInvoicePaymentDefinition.cs" />

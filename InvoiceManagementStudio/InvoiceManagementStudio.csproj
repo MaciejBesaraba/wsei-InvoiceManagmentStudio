@@ -59,6 +59,9 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="Core\Definition\IInvoiceDefinition.cs" />
+        <Compile Include="Core\Definition\IInvoiceItemDefinition.cs" />
+        <Compile Include="Core\Definition\IInvoicePaymentDefinition.cs" />
+        <Compile Include="Core\Definition\IObjectIdentifier.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>

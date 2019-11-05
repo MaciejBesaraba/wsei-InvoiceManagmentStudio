@@ -58,6 +58,10 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Core\Definition\Entity\ESex.cs" />
+        <Compile Include="Core\Definition\Entity\IAddressDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\IBillingInfoDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\IContactInfoDefinition.cs" />
         <Compile Include="Core\Definition\Entity\IEntityDefinition.cs" />
         <Compile Include="Core\Definition\Entity\IEntityReceiverDefinition.cs" />
         <Compile Include="Core\Definition\Entity\IEntitySupplierDefinition.cs" />

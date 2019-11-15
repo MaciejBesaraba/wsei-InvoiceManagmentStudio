@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 using InvoiceManagementStudio.Core.Definition;
@@ -40,8 +41,10 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
 
         public IEntityReceiverDefinition Receiver => receiver;
 
+
         #endregion
         #region constructors
+
 
         public Invoice(
             IObjectIdentifier<ulong> id,
@@ -64,8 +67,10 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
             this.receiver = receiver;
         }
 
+
         #endregion
         #region properties
+
 
         public string Serial => $"FV/{IssueDate.Year.ToString()}/{Id}";
 
@@ -80,6 +85,33 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         public decimal Due => Total - Payed;
 
         public bool IsPayed => Total >= Payed;
+
+
+        #endregion
+        #region operator overrides
+
+
+        public override string ToString()
+        {
+            // TODO ArBy global culture
+            return "Invoice(" +
+                       $"serial={Serial}, " +
+                       $"id={Id}, " +
+                       $"isPayed={IsPayed.ToString()}, " +
+                       $"issueDate={IssueDate:yyyy-MM-dd}, " +
+                       $"dueDate={DueDate:yyyy-MM-dd}, " +
+                       $"redemptionDate={RedemptionDate:yyyy-MM-dd}, " +
+                       $"supplier={Supplier}, " +
+                       $"receiver={Receiver}, " +
+                       $"total={Total.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"subtotal={Subtotal.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"discount={Discount.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"payed={Payed.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"due={Due.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"items=[{string.Join(", ", Items)}], " +
+                       $"payments=[{string.Join(", ", Payments)}]" +
+                   ")";
+        }
 
         #endregion
 

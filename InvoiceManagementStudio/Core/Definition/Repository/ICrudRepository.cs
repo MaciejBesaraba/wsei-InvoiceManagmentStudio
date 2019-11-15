@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace InvoiceManagementStudio.Core.Definition.Service
+namespace InvoiceManagementStudio.Core.Definition.Repository
 {
 
     /// <summary>
@@ -9,11 +9,11 @@ namespace InvoiceManagementStudio.Core.Definition.Service
     /// </summary>
     /// <typeparam name="TId">Type of id used by entity for which service is implemented</typeparam>
     /// <typeparam name="T">Type of entity for which service is implemented</typeparam>
-    public interface ICrudService<in TId, T>
+    public interface ICrudRepository<in TId, T>
     {
-        List<T> GetAll();
+        List<T> FindAll();
 
-        T GetById(IObjectIdentifier<TId> id);
+        T FindById(IObjectIdentifier<TId> id);
 
         T Create(T entity);
 

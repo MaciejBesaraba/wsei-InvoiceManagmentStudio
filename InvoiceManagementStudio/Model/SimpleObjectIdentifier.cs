@@ -2,7 +2,7 @@ using System;
 using InvoiceManagementStudio.Core.Definition;
 
 
-namespace InvoiceManagementStudio.Core.Model
+namespace InvoiceManagementStudio.Model
 {
 
     public class SimpleObjectIdentifier : IObjectIdentifier<ulong>, IEquatable<SimpleObjectIdentifier>

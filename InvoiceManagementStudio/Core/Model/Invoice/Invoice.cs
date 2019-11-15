@@ -94,9 +94,9 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         public override string ToString()
         {
             // TODO ArBy global culture, datetime format
-            string formattedIssueDate = IssueDate.ToString("yyyy-MM-dd");
-            string formattedDueDate = DueDate.ToString("yyyy-MM-dd");
-            string formattedRedemptionDate = RedemptionDate != null ? RedemptionDate.Value.ToString("yyyy-MM-dd") : "n/a";
+            var formattedIssueDate = IssueDate.ToString("yyyy-MM-dd");
+            var formattedDueDate = DueDate.ToString("yyyy-MM-dd");
+            var formattedRedemptionDate = RedemptionDate != null ? RedemptionDate.Value.ToString("yyyy-MM-dd") : "n/a";
 
             return "Invoice(" +
                        $"serial={Serial}, " +

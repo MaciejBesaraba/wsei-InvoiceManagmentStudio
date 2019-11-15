@@ -38,7 +38,32 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         public IEntitySupplierDefinition Supplier => supplier;
 
         public IEntityReceiverDefinition Receiver => receiver;
-        
+
+        public Invoice(
+            IObjectIdentifier<ulong> id,
+            DateTime issueDate,
+            DateTime dueDate,
+            DateTime? redemptionDate,
+            bool isPayed,
+            decimal payed,
+            List<IInvoiceItemDefinition> items,
+            List<IInvoicePaymentDefinition> payments,
+            IEntitySupplierDefinition supplier,
+            IEntityReceiverDefinition receiver
+        )
+        {
+            this.id = id;
+            this.issueDate = issueDate;
+            this.dueDate = dueDate;
+            this.redemptionDate = redemptionDate;
+            this.isPayed = isPayed;
+            this.payed = payed;
+            this.items = items;
+            this.payments = payments;
+            this.supplier = supplier;
+            this.receiver = receiver;
+        }
+
     }
 
 }

@@ -76,6 +76,8 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Model\Invoice\Invoice.cs" />
+        <Compile Include="Model\SimpleObjectIdentifier.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>

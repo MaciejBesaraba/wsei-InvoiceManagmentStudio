@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace InvoiceManagementStudio.Core.Definition.Repository
 {
     /// <summary>
-    /// Defines generic CRUD service
+    /// Defines generic CRUD repository rules for memory storage of entity type provided
     /// </summary>
     /// <typeparam name="TId">Type of id used by entity for which service is implemented</typeparam>
     /// <typeparam name="T">Type of entity for which service is implemented</typeparam>

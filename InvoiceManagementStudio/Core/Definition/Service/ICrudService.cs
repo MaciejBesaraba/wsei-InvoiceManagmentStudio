@@ -19,7 +19,10 @@ namespace InvoiceManagementStudio.Core.Definition.Service
 
         T Update(T entity);
 
+        T Delete(IObjectIdentifier<TId> id);
+
         T Delete(T entity);
+        
     }
 
 }

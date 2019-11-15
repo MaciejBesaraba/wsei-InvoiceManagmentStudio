@@ -19,6 +19,8 @@ namespace InvoiceManagementStudio.Core.Definition.Repository
 
         T Update(T entity);
 
+        T Delete(IObjectIdentifier<TId> id);
+
         T Delete(T entity);
     }
 

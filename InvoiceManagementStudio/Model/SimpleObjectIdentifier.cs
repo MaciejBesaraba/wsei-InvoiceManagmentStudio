@@ -7,14 +7,12 @@ namespace InvoiceManagementStudio.Model
 
     public class SimpleObjectIdentifier : IObjectIdentifier<ulong>, IEquatable<SimpleObjectIdentifier>
     {
-        private readonly ulong id;
-
-        public ulong Id => id;
+        public ulong Id { get; }
 
 
-        SimpleObjectIdentifier(ulong id)
+        public SimpleObjectIdentifier(ulong id)
         {
-            this.id = id;
+            this.Id = id;
         }
 
 
@@ -34,7 +32,7 @@ namespace InvoiceManagementStudio.Model
             {
                 return true;
             }
-            return id == other.id;
+            return Id == other.Id;
         }
 
         public override bool Equals(object obj)
@@ -53,7 +51,7 @@ namespace InvoiceManagementStudio.Model
 
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
 
     }

@@ -18,7 +18,6 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         private readonly DateTime issueDate;
         private readonly DateTime dueDate;
         private readonly DateTime? redemptionDate;
-        private readonly decimal payed;
         private readonly List<IInvoiceItemDefinition> items;
         private readonly List<IInvoicePaymentDefinition> payments;
         private readonly IEntitySupplierDefinition supplier;
@@ -32,8 +31,6 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         public DateTime DueDate => dueDate;
 
         public DateTime? RedemptionDate => redemptionDate;
-
-        public decimal Payed => payed;
 
         public List<IInvoiceItemDefinition> Items => items;
 
@@ -51,7 +48,6 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
             DateTime issueDate,
             DateTime dueDate,
             DateTime? redemptionDate,
-            decimal payed,
             List<IInvoiceItemDefinition> items,
             List<IInvoicePaymentDefinition> payments,
             IEntitySupplierDefinition supplier,
@@ -62,7 +58,6 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
             this.issueDate = issueDate;
             this.dueDate = dueDate;
             this.redemptionDate = redemptionDate;
-            this.payed = payed;
             this.items = items;
             this.payments = payments;
             this.supplier = supplier;
@@ -79,6 +74,8 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
         public decimal Subtotal => Items.Sum(item => item.Subtotal);
 
         public decimal Discount => Items.Sum(item => item.Discount);
+
+        public decimal Payed => Payments.Sum(payment => payment.Amount);
 
         public decimal Due => Total - Payed;
 

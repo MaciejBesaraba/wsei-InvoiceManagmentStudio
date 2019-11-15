@@ -71,6 +71,7 @@
         <Compile Include="Core\Definition\Invoice\IInvoicePaymentDefinition.cs" />
         <Compile Include="Core\Definition\IObjectIdentifier.cs" />
         <Compile Include="Core\Model\Invoice\Invoice.cs" />
+        <Compile Include="Core\Model\SimpleObjectIdentifier.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>

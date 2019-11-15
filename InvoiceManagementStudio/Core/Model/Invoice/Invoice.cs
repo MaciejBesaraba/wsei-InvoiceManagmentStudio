@@ -93,15 +93,18 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
 
         public override string ToString()
         {
-            // TODO ArBy global culture
-            // TODO ArBy datetime format
+            // TODO ArBy global culture, datetime format
+            string formattedIssueDate = IssueDate.ToString("yyyy-MM-dd");
+            string formattedDueDate = DueDate.ToString("yyyy-MM-dd");
+            string formattedRedemptionDate = RedemptionDate != null ? RedemptionDate.Value.ToString("yyyy-MM-dd") : "n/a";
+
             return "Invoice(" +
                        $"serial={Serial}, " +
                        $"id={Id}, " +
                        $"isPayed={IsPayed.ToString()}, " +
-                       $"issueDate={IssueDate:yyyy-MM-dd}, " +
-                       $"dueDate={DueDate:yyyy-MM-dd}, " +
-                       $"redemptionDate={RedemptionDate:yyyy-MM-dd}, " +
+                       $"issueDate={formattedIssueDate}, " +
+                       $"dueDate={formattedDueDate}, " +
+                       $"redemptionDate={formattedRedemptionDate}, " +
                        $"supplier={Supplier}, " +
                        $"receiver={Receiver}, " +
                        $"total={Total.ToString(CultureInfo.InvariantCulture)}, " +
@@ -113,9 +116,6 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
                        $"payments=[{string.Join(", ", Payments)}]" +
                    ")";
         }
-        
-
-        #endregion
 
         public bool Equals(Invoice other)
         {
@@ -128,6 +128,7 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
             {
                 return true;
             }
+            // TODO ArBy redemptionDate equality
             return Equals(id, other.id) &&
                    issueDate.Equals(other.issueDate) &&
                    dueDate.Equals(other.dueDate) &&
@@ -167,6 +168,8 @@ namespace InvoiceManagementStudio.Core.Model.Invoice
                 return hashCode;
             }
         }
+        
+        #endregion
     }
 
 }

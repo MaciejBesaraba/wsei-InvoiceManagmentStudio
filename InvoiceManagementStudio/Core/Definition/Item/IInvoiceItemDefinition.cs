@@ -1,4 +1,4 @@
-namespace InvoiceManagementStudio.Core.Definition.Invoice
+namespace InvoiceManagementStudio.Core.Definition.Item
 {
 
     public interface IInvoiceItemDefinition

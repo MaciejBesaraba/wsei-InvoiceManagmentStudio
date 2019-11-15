@@ -1,7 +1,7 @@
 namespace InvoiceManagementStudio.Core.Definition
 {
 
-    public interface IObjectIdentifier<T>
+    public interface IObjectIdentifier<out T>
     {
         T Id { get; }
     }

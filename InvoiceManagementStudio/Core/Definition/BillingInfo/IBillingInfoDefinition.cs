@@ -1,12 +1,13 @@
-namespace InvoiceManagementStudio.Core.Definition.Entity
-{
+using InvoiceManagementStudio.Core.Definition.Address;
 
+
+namespace InvoiceManagementStudio.Core.Definition.BillingInfo
+{
     /// <summary>
     /// Represents company billing data needed to issue a invoice
     /// </summary>
     public interface IBillingInfoDefinition
     {
-
         /// <summary>
         /// Unique identifier for BillingInfo instance
         /// </summary>
@@ -27,7 +28,6 @@ namespace InvoiceManagementStudio.Core.Definition.Entity
         /// Official address related to billing data
         /// </summary>
         IAddressDefinition BillingAddress { get; }
-
     }
 
 }

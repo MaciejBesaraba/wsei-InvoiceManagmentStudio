@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace InvoiceManagementStudio.Core.Definition.Service
+namespace InvoiceManagementStudio.Core.Definition
 {
 
     /// <summary>

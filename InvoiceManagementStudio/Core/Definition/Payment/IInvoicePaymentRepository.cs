@@ -1,7 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Invoice;
-
-
-namespace InvoiceManagementStudio.Core.Definition.Repository.Payment
+namespace InvoiceManagementStudio.Core.Definition.Payment
 {
 
     public interface IInvoicePaymentRepository : ICrudRepository<ulong, IInvoicePaymentDefinition>

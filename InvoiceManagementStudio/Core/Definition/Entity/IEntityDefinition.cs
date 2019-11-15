@@ -1,12 +1,14 @@
+using InvoiceManagementStudio.Core.Definition.BillingInfo;
+using InvoiceManagementStudio.Core.Definition.ContactInfo;
+
+
 namespace InvoiceManagementStudio.Core.Definition.Entity
 {
-
     /// <summary>
     /// Represents an Entity-Company able to receive or issue an invoice
     /// </summary>
     public interface IEntityDefinition
     {
-
         /// <summary>
         /// Unique identifier for entity instance
         /// </summary>
@@ -21,7 +23,6 @@ namespace InvoiceManagementStudio.Core.Definition.Entity
         /// Contact information provided by entity
         /// </summary>
         IContactInfoDefinition ContactInfo { get; }
-
     }
 
 }

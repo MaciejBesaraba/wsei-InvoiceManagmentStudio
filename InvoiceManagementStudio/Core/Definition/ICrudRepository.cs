@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace InvoiceManagementStudio.Core.Definition.Repository
+namespace InvoiceManagementStudio.Core.Definition
 {
     /// <summary>
     /// Defines generic CRUD repository rules for memory storage of entity type provided

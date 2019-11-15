@@ -1,12 +1,13 @@
+using System;
 using InvoiceManagementStudio.Core.Definition;
 
 
 namespace InvoiceManagementStudio.Core.Model
 {
 
-    public class SimpleObjectIdentifier : IObjectIdentifier<ulong>
+    public class SimpleObjectIdentifier : IObjectIdentifier<ulong>, IEquatable<SimpleObjectIdentifier>
     {
-        private ulong id;
+        private readonly ulong id;
 
         public ulong Id => id;
 
@@ -20,6 +21,39 @@ namespace InvoiceManagementStudio.Core.Model
         public override string ToString()
         {
             return Id.ToString();
+        }
+
+        public bool Equals(SimpleObjectIdentifier other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            return id == other.id;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+            return obj.GetType() == GetType() && Equals((SimpleObjectIdentifier) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return id.GetHashCode();
         }
 
     }

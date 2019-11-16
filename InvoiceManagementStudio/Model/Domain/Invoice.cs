@@ -10,7 +10,7 @@ using InvoiceManagementStudio.Core.Definition.Item;
 using InvoiceManagementStudio.Core.Definition.Payment;
 
 
-namespace InvoiceManagementStudio.Model.Invoice
+namespace InvoiceManagementStudio.Model.Domain
 {
 
     public class Invoice : IInvoiceDefinition, IEquatable<Invoice>

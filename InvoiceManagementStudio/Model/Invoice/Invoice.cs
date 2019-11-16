@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity;
 using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
 using InvoiceManagementStudio.Core.Definition.Entity.Supplier;
 using InvoiceManagementStudio.Core.Definition.Invoice;
 using InvoiceManagementStudio.Core.Definition.Item;
 using InvoiceManagementStudio.Core.Definition.Payment;
+
 
 namespace InvoiceManagementStudio.Model.Invoice
 {

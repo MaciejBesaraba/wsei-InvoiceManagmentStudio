@@ -93,6 +93,15 @@
         <Compile Include="Model\Domain\Invoice.cs" />
         <Compile Include="Model\Domain\InvoiceItem.cs" />
         <Compile Include="Model\Domain\InvoicePayment.cs" />
+        <Compile Include="Model\Dto\AddressDto.cs" />
+        <Compile Include="Model\Dto\BillingInfoDto.cs" />
+        <Compile Include="Model\Dto\ContactInfoDto.cs" />
+        <Compile Include="Model\Dto\EntityDto.cs" />
+        <Compile Include="Model\Dto\EntityReceiverDto.cs" />
+        <Compile Include="Model\Dto\EntitySupplierDto.cs" />
+        <Compile Include="Model\Dto\InvoiceDto.cs" />
+        <Compile Include="Model\Dto\InvoiceItemDto.cs" />
+        <Compile Include="Model\Dto\InvoicePaymentDto.cs" />
         <Compile Include="Model\SimpleObjectIdentifier.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>

@@ -84,7 +84,15 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Model\Invoice\Invoice.cs" />
+        <Compile Include="Model\Domain\Address.cs" />
+        <Compile Include="Model\Domain\BillingInfo.cs" />
+        <Compile Include="Model\Domain\ContactInfo.cs" />
+        <Compile Include="Model\Domain\Entity.cs" />
+        <Compile Include="Model\Domain\EntityReceiver.cs" />
+        <Compile Include="Model\Domain\EntitySupplier.cs" />
+        <Compile Include="Model\Domain\Invoice.cs" />
+        <Compile Include="Model\Domain\InvoiceItem.cs" />
+        <Compile Include="Model\Domain\InvoicePayment.cs" />
         <Compile Include="Model\SimpleObjectIdentifier.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>

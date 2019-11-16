@@ -71,6 +71,15 @@
         <Compile Include="Repository\InMemory\InvoiceInMemoryRepository.cs" />
         <Compile Include="Repository\InMemory\InvoiceItemInMemoryRepository.cs" />
         <Compile Include="Repository\InMemory\InvoicePaymentInMemoryRepository.cs" />
+        <Compile Include="Service\AddressInMemoryService.cs" />
+        <Compile Include="Service\BillingInfoInMemoryService.cs" />
+        <Compile Include="Service\ContactInfoInMemoryService.cs" />
+        <Compile Include="Service\EntityInMemoryService.cs" />
+        <Compile Include="Service\EntityReceiverInMemoryService.cs" />
+        <Compile Include="Service\EntitySupplierInMemoryService.cs" />
+        <Compile Include="Service\InvoiceInMemoryService.cs" />
+        <Compile Include="Service\InvoiceItemInMemoryService.cs" />
+        <Compile Include="Service\InvoicePaymentInMemoryService.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>

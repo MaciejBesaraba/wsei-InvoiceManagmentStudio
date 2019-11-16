@@ -67,6 +67,7 @@
         <Compile Include="Core\Definition\Entity\Supplier\IEntitySupplierDefinition.cs" />
         <Compile Include="Core\Definition\ICrudRepository.cs" />
         <Compile Include="Core\Definition\ICrudService.cs" />
+        <Compile Include="Core\Definition\IDataTransferObject.cs" />
         <Compile Include="Core\Definition\Invoice\IInvoiceDefinition.cs" />
         <Compile Include="Core\Definition\Invoice\IInvoiceRepository.cs" />
         <Compile Include="Core\Definition\Invoice\IInvoiceService.cs" />

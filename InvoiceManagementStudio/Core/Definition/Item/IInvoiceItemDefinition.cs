@@ -39,6 +39,11 @@ namespace InvoiceManagementStudio.Core.Definition.Item
         /// Full price of the payment (added discount)
         /// </summary>
         decimal Total { get; }
+
+        /// <summary>
+        /// Number of positions (products/services) on invoice
+        /// </summary>
+        double Quantity { get; }
     }
 
 }

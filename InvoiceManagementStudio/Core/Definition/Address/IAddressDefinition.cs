@@ -1,13 +1,11 @@
-namespace InvoiceManagementStudio.Core.Definition.Entity
+namespace InvoiceManagementStudio.Core.Definition.Address
 {
-
     // TODO Localization
     /// <summary>
     /// Represents physical address
     /// </summary>
     public interface IAddressDefinition
     {
-
         /// <summary>
         /// Unique identifier of address instance
         /// </summary>
@@ -45,7 +43,6 @@ namespace InvoiceManagementStudio.Core.Definition.Entity
         /// Set to null will assume it is not necessary to differentiate within building
         /// </summary>
         string FlatNumber { get; }
-
     }
 
 }

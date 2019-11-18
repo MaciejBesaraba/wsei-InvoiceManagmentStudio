@@ -1,4 +1,4 @@
-namespace InvoiceManagementStudio.Core.Definition.Entity
+namespace InvoiceManagementStudio.Core.Definition.Entity.Supplier
 {
 
     public interface IEntitySupplierDefinition : IEntityDefinition

@@ -1,6 +1,8 @@
-namespace InvoiceManagementStudio.Core.Definition.Entity
-{
+using InvoiceManagementStudio.Core.Definition.Entity;
 
+
+namespace InvoiceManagementStudio.Core.Definition.ContactInfo
+{
     // TODO define "subject"
     /// <summary>
     /// Represents set of information needed to contact a subject
@@ -53,7 +55,6 @@ namespace InvoiceManagementStudio.Core.Definition.Entity
         /// Subject's surname
         /// </summary>
         string Surname { get; }
-
     }
 
 }

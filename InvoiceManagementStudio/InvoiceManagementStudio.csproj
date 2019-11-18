@@ -58,24 +58,34 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Core\Definition\Address\IAddressDefinition.cs" />
+        <Compile Include="Core\Definition\BillingInfo\IBillingInfoDefinition.cs" />
+        <Compile Include="Core\Definition\ContactInfo\IContactInfoDefinition.cs" />
         <Compile Include="Core\Definition\Entity\ESex.cs" />
-        <Compile Include="Core\Definition\Entity\IAddressDefinition.cs" />
-        <Compile Include="Core\Definition\Entity\IBillingInfoDefinition.cs" />
-        <Compile Include="Core\Definition\Entity\IContactInfoDefinition.cs" />
         <Compile Include="Core\Definition\Entity\IEntityDefinition.cs" />
-        <Compile Include="Core\Definition\Entity\IEntityReceiverDefinition.cs" />
-        <Compile Include="Core\Definition\Entity\IEntitySupplierDefinition.cs" />
-        <Compile Include="Core\Definition\Invoice\EUnitType.cs" />
+        <Compile Include="Core\Definition\Entity\Receiver\IEntityReceiverDefinition.cs" />
+        <Compile Include="Core\Definition\Entity\Supplier\IEntitySupplierDefinition.cs" />
+        <Compile Include="Core\Definition\ICrudRepository.cs" />
+        <Compile Include="Core\Definition\ICrudService.cs" />
         <Compile Include="Core\Definition\Invoice\IInvoiceDefinition.cs" />
-        <Compile Include="Core\Definition\Invoice\IInvoiceItemDefinition.cs" />
-        <Compile Include="Core\Definition\Invoice\IInvoicePaymentDefinition.cs" />
+        <Compile Include="Core\Definition\Invoice\IInvoiceRepository.cs" />
+        <Compile Include="Core\Definition\Invoice\IInvoiceService.cs" />
         <Compile Include="Core\Definition\IObjectIdentifier.cs" />
+        <Compile Include="Core\Definition\Item\EUnitType.cs" />
+        <Compile Include="Core\Definition\Item\IInvoiceItemDefinition.cs" />
+        <Compile Include="Core\Definition\Item\IInvoiceItemRepository.cs" />
+        <Compile Include="Core\Definition\Item\IInvoiceItemService.cs" />
+        <Compile Include="Core\Definition\Payment\IInvoicePaymentDefinition.cs" />
+        <Compile Include="Core\Definition\Payment\IInvoicePaymentRepository.cs" />
+        <Compile Include="Core\Definition\Payment\IInvoicePaymentService.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Model\Invoice\Invoice.cs" />
+        <Compile Include="Model\SimpleObjectIdentifier.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>

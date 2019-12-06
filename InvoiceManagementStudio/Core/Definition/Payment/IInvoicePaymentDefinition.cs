@@ -16,7 +16,7 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
         /// <summary>
         /// Specifies payment methods
         /// </summary>
-        EPaymentType PaymentType { get; }
+        EType PaymentType { get; }
 
         /// <summary>
         /// The date payment was posted

@@ -16,22 +16,22 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
         /// <summary>
         /// Specifies payment methods
         /// </summary>
-        EType PaymentType { get; }
+        EType Type { get; }
 
         /// <summary>
         /// The date payment was posted
         /// </summary>
-        DateTime PaymentDate { get; }
+        DateTime Date { get; }
 
         /// <summary>
         /// Specifies Time zone
         /// </summary>
-        string LocalTime { get; }
+        TimeZoneInfo TimeZone { get; }
 
         /// <summary>
         /// Amount of the money posted (need to be compared with Total payment)
         /// </summary>
-        decimal PaymentAmount { get; }
+        decimal Amount { get; }
 
         /// <summary>
         /// Brand of the credit card used to issue payment

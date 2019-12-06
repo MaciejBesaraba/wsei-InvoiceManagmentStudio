@@ -13,7 +13,14 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
     public enum EType
     {
         Cash,
-        CreditCard,
+
+        #region BankCards
+        CardMasterCard,
+        CardMaestro,
+        CardVisa,
+        CardAmericanExpress,
+        #endregion
+
         BankTransfer,
         InAdvance
 

@@ -33,11 +33,7 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
         /// </summary>
         decimal Amount { get; }
 
-        /// <summary>
-        /// Brand of the credit card used to issue payment
-        /// </summary>
-        string CreditCardType { get; }
-
+        
 
     }
 

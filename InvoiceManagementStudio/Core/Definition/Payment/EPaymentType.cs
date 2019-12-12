@@ -10,18 +10,20 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
     /// <summary>
     /// Type of payment used on invoice
     /// </summary>
-    public enum EPaymentType
+    public enum EType
     {
         Cash,
-        BankTransfer,
-        InAdvance,
 
         #region BankCards
         CardMasterCard,
         CardMaestro,
         CardVisa,
-        CardAmericanExpress
+        CardAmericanExpress,
         #endregion
+
+        BankTransfer,
+        InAdvance
+
     }
 
 }

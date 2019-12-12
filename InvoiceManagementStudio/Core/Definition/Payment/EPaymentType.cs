@@ -6,15 +6,14 @@
     public enum EPaymentType
     {
         Cash,
+        BankTransfer,
+        InAdvance,
 
         #region BankCards
         CardMasterCard,
         CardMaestro,
         CardVisa,
-        CardAmericanExpress,
+        CardAmericanExpress
         #endregion
-
-        BankTransfer,
-        InAdvance
     }
 }

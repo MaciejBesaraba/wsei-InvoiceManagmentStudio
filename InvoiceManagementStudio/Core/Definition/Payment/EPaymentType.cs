@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InvoiceManagementStudio.Core.Definition.Payment
+﻿namespace InvoiceManagementStudio.Core.Definition.Payment
 {
-
     /// <summary>
     /// Type of payment used on invoice
     /// </summary>
-    public enum EType
+    public enum EPaymentType
     {
         Cash,
 
@@ -23,7 +16,5 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
 
         BankTransfer,
         InAdvance
-
     }
-
 }

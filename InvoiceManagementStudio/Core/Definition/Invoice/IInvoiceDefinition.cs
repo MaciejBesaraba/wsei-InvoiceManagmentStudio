@@ -10,7 +10,7 @@ using InvoiceManagementStudio.Core.Definition.Payment;
 namespace InvoiceManagementStudio.Core.Definition.Invoice
 {
     /// <summary>
-    /// Defines object model for invoice 
+    /// Defines object model for invoice
     /// </summary>
     public interface IInvoiceDefinition
     {

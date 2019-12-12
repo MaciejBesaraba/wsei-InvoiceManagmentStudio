@@ -22,8 +22,6 @@ namespace InvoiceManagementStudio.Model.Domain
         public decimal Discount { get; }
         public double Quantity { get; }
 
-
-
         public InvoiceItem(
             IObjectIdentifier<ulong> id,
             string name,
@@ -32,9 +30,6 @@ namespace InvoiceManagementStudio.Model.Domain
             decimal discount,
             double quantity
         )
-
-
-
         {
             Id = id;
             Name = name;
@@ -45,19 +40,14 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
+        public decimal Total => UnitPrice * Quantity;
 
-
-        public decimal Total => UnitPrice - Discount;
-
-        public decimal Subtotal => Total * Quantity;
+        public decimal Subtotal => Total - Discount;
              
                 
 
-
         public override string ToString()
-        {
-            
-
+        {            
             return "InvoiceItem(" +
                        $"id={Id}, " +
                        $"name={Name.ToString()}, " +
@@ -67,7 +57,6 @@ namespace InvoiceManagementStudio.Model.Domain
                        $"subtotal={Subtotal.ToString(CultureInfo.InvariantCulture)}, " +
                        $"total={Total.ToString(CultureInfo.InvariantCulture)}, " +
                        $"quantity={Quantity.ToString()}, " +
-
                    ")";
         }
 
@@ -83,14 +72,12 @@ namespace InvoiceManagementStudio.Model.Domain
                 return true;
             }
 
-            // TODO ArBy redemptionDate equality
             return Equals(Id, other.Id) &&
                    Equals(Name, other.Name) &&
                    Equals(UnitPrice, other.UnitPrice) &&
                    Equals(UnitType, other.UnitType) &&
                    Equals(Discount, other.Discount) &&
                    Equals(Quantity, other.Quantity);
-
         }
 
         public override bool Equals(object obj)
@@ -118,7 +105,6 @@ namespace InvoiceManagementStudio.Model.Domain
                 hashCode = (hashCode * 397) ^ (UnitType != null ? UnitType.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Discount != null ? Discount.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Quantity != null ? Quantity.GetHashCode() : 0);
-
 
                 return hashCode;
             }

@@ -51,8 +51,56 @@ namespace InvoiceManagementStudio.Model.Domain
                    ")";
         }
 
-        
+        public bool Equals(InvoicePayment other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
 
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return Equals(Id, other.Id) &&
+                   Equals(PaymentType, other.PaymentType) &&
+                   Date.Equals(other.Date) &&
+                   TimeZone.Equals(other.TimeZone) &&
+                   Equals(Amount, other.Amount);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            return obj.GetType() == GetType() && Equals((InvoicePayment)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (Id != null ? Id.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (PaymentType != null ? PaymentType.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ Date.GetHashCode();
+
+                //hashCode = (hashCode * 397) ^ (TimeZoneInfo != null ? TimeZoneInfo.GetHashCode() : 0);  
+                //TimeZoneInfo is defined at the start -> should it be implemented here?
+
+                hashCode = (hashCode * 397) ^ (Amount != null ? Amount.GetHashCode() : 0);
+
+                return hashCode;
+            }
+        }
 
     }
 

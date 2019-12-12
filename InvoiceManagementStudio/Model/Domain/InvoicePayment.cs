@@ -38,8 +38,21 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
+        public override string ToString()
+        {
+            var formattedDate = Date.ToString("yyyy-MM-dd");
+
+            return "InvoicePayment(" +
+                       $"id={Id}, " +
+                       $"paymentType={PaymentType}," +
+                       $"date={formattedDate}, " +
+                       $"timeZone={TimeZone}, " +
+                       $"amount={Amount.ToString(CultureInfo.InvariantCulture)}, " +
+                   ")";
+        }
 
         
+
 
     }
 

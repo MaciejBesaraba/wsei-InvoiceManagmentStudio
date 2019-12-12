@@ -1,13 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
-using InvoiceManagementStudio.Core.Definition.Entity.Supplier;
-using InvoiceManagementStudio.Core.Definition.Invoice;
 using InvoiceManagementStudio.Core.Definition.Item;
-using InvoiceManagementStudio.Core.Definition.Payment;
 
 
 namespace InvoiceManagementStudio.Model.Domain
@@ -40,7 +34,7 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
-        public decimal Total => UnitPrice * Quantity;
+        public decimal Total => UnitPrice * (decimal)Quantity;
 
         public decimal Subtotal => Total - Discount;
              

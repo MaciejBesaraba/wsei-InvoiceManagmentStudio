@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace InvoiceManagementStudio.Core.Definition.Payment
 {
@@ -16,7 +15,7 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
         /// <summary>
         /// Specifies payment methods
         /// </summary>
-        EType PaymentType { get; }
+        EPaymentType Type { get; }
 
         /// <summary>
         /// The date payment was posted
@@ -32,9 +31,5 @@ namespace InvoiceManagementStudio.Core.Definition.Payment
         /// Amount of the money posted (need to be compared with Total payment)
         /// </summary>
         decimal Amount { get; }
-
-        
-
     }
-
 }

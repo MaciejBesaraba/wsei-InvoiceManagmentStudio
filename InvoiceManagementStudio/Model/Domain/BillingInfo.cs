@@ -39,4 +39,14 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
+        public override string ToString()
+        {
+            return "BillingInfo(" +
+                       $"id={Id}, " +
+                       $"companyName={CompanyName.ToString()}, " +
+                       $"zipCode={ZipCode.ToString()}, " +
+                       $"billingAddress={BillingAddress}, " +
+                   ")";
+        }
+
 

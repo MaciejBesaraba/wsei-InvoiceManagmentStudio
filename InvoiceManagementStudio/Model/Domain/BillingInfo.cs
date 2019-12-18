@@ -1,20 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+
 using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
-using InvoiceManagementStudio.Core.Definition.Entity.Supplier;
-using InvoiceManagementStudio.Core.Definition.Invoice;
-using InvoiceManagementStudio.Core.Definition.Item;
-using InvoiceManagementStudio.Core.Definition.Payment;
 using InvoiceManagementStudio.Core.Definition.BillingInfo;
 using InvoiceManagementStudio.Core.Definition.Address;
 
 
 namespace InvoiceManagementStudio.Model.Domain
 {
-
     public class BillingInfo : IBillingInfoDefinition, IEquatable<BillingInfo>
     {
         public IObjectIdentifier<ulong> Id { get; }
@@ -28,15 +20,12 @@ namespace InvoiceManagementStudio.Model.Domain
             string companyName,
             string zipCode,
             IAddressDefinition billingAddress
-
         )
         {
             Id = id;
             CompanyName = companyName;
             ZipCode = zipCode;
             BillingAddress = billingAddress;
-
-
         }
 
         public override string ToString()
@@ -55,17 +44,14 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
-
             return Equals(Id, other.Id) &&
                    Equals(CompanyName, other.CompanyName) &&
                    Equals(ZipCode, other.ZipCode) &&
                    Equals(BillingAddress, other.BillingAddress);
-
         }
 
         public override bool Equals(object obj)
@@ -74,12 +60,10 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-
             return obj.GetType() == GetType() && Equals((BillingInfo)obj);
         }
 
@@ -95,7 +79,5 @@ namespace InvoiceManagementStudio.Model.Domain
                 return hashCode;
             }
         }
-
     }
-
 }

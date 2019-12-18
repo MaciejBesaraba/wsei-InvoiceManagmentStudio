@@ -25,12 +25,14 @@ namespace InvoiceManagementStudio.Model.Domain
 
         public Address(
             IObjectIdentifier<ulong> id,
-            string name,
-            decimal unitPrice,
-            EUnitType unitType,
-            decimal discount,
-            double quantity
+            string country,
+            string city,
+            string street,
+            string state,
+            string buildingNumber,
+            string flatNumber
         )
+
         {
             Id = id;
             Country = country;
@@ -41,3 +43,5 @@ namespace InvoiceManagementStudio.Model.Domain
             FlatNumber = flatNumber;
 
         }
+
+ 

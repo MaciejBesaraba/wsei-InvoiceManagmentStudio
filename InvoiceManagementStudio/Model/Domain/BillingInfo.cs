@@ -49,4 +49,53 @@ namespace InvoiceManagementStudio.Model.Domain
                    ")";
         }
 
+        public bool Equals(BillingInfo other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
 
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return Equals(Id, other.Id) &&
+                   Equals(CompanyName, other.CompanyName) &&
+                   Equals(ZipCode, other.ZipCode) &&
+                   Equals(BillingAddress, other.BillingAddress);
+
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            return obj.GetType() == GetType() && Equals((BillingInfo)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (Id != null ? Id.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (CompanyName != null ? CompanyName.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (ZipCode != null ? ZipCode.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (BillingAddress != null ? BillingAddress.GetHashCode() : 0);
+
+                return hashCode;
+            }
+        }
+
+    }
+
+}

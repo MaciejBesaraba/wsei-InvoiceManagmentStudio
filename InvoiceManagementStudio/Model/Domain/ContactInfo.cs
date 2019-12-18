@@ -1,13 +1,12 @@
 using System;
+
 using InvoiceManagementStudio.Core.Definition;
 using InvoiceManagementStudio.Core.Definition.ContactInfo;
 using InvoiceManagementStudio.Core.Definition.Entity;
 
 
-
 namespace InvoiceManagementStudio.Model.Domain
 {
-
     public class ContactInfo : IContactInfoDefinition, IEquatable<ContactInfo>
     {
         public IObjectIdentifier<ulong> Id { get; }
@@ -29,7 +28,6 @@ namespace InvoiceManagementStudio.Model.Domain
             ESex sex,
             string name,
             string surname
-
         )
         {
             Id = id;
@@ -40,8 +38,6 @@ namespace InvoiceManagementStudio.Model.Domain
             Sex = sex;
             Name = name;
             Surname = surname;
-
-
         }
 
         public override string ToString()
@@ -64,12 +60,10 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
-
             return Equals(Id, other.Id) &&
                    Equals(Email, other.Email) &&
                    Equals(Phone, other.Phone) &&
@@ -78,7 +72,6 @@ namespace InvoiceManagementStudio.Model.Domain
                    Equals(Sex, other.Sex) &&
                    Equals(Name, other.Name) &&
                    Equals(Surname, other.Surname);
-
         }
 
         public override bool Equals(object obj)
@@ -87,12 +80,10 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-
             return obj.GetType() == GetType() && Equals((ContactInfo)obj);
         }
 
@@ -112,7 +103,5 @@ namespace InvoiceManagementStudio.Model.Domain
                 return hashCode;
             }
         }
-
     }
-
 }

@@ -44,4 +44,18 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
+        public override string ToString()
+        {
+            return "ContactInfo(" +
+                       $"id={Id}, " +
+                       $"email={Email.ToString()}, " +
+                       $"phone={Phone.ToString()}, " +
+                       $"mobile={Mobile.ToString()}, " +
+                       $"title={Title.ToString()}, " +
+                       $"sex={Sex}, " +
+                       $"name={Name.ToString()}, " +
+                       $"surname={Surname.ToString()}, " +
+                   ")";
+        }
+
 

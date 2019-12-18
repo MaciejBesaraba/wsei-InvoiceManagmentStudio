@@ -1,13 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
-using InvoiceManagementStudio.Core.Definition.Entity.Supplier;
-using InvoiceManagementStudio.Core.Definition.Invoice;
-using InvoiceManagementStudio.Core.Definition.Item;
-using InvoiceManagementStudio.Core.Definition.Payment;
+using InvoiceManagementStudio.Core.Definition.Address;
 
 
 namespace InvoiceManagementStudio.Model.Domain
@@ -32,7 +25,6 @@ namespace InvoiceManagementStudio.Model.Domain
             string buildingNumber,
             string flatNumber
         )
-
         {
             Id = id;
             Country = country;
@@ -41,7 +33,6 @@ namespace InvoiceManagementStudio.Model.Domain
             State = state;
             BuildingNumber = buildingNumber;
             FlatNumber = flatNumber;
-
         }
 
         public override string ToString()
@@ -63,12 +54,10 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
-
             return Equals(Id, other.Id) &&
                    Equals(Country, other.Country) &&
                    Equals(City, other.City) &&
@@ -84,12 +73,10 @@ namespace InvoiceManagementStudio.Model.Domain
             {
                 return false;
             }
-
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-
             return obj.GetType() == GetType() && Equals((Address)obj);
         }
 
@@ -108,7 +95,5 @@ namespace InvoiceManagementStudio.Model.Domain
                 return hashCode;
             }
         }
-
     }
-
 }

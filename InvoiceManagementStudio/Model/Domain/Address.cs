@@ -44,4 +44,16 @@ namespace InvoiceManagementStudio.Model.Domain
 
         }
 
- 
+        public override string ToString()
+        {
+            return "Address(" +
+                       $"id={Id}, " +
+                       $"country={Country.ToString()}, " +
+                       $"city={City.ToString()}, " +
+                       $"street={Street.ToString()}, " +
+                       $"state={State.ToString()}, " +
+                       $"buildingNumber={BuildingNumber.ToString()}, " +
+                       $"flatNumber={FlatNumber.ToString()}, " +
+                   ")";
+        }
+

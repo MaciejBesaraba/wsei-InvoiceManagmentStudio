@@ -1,19 +1,19 @@
 using System;
 
+
 namespace InvoiceManagementStudio.Core.Domain.Address
 {
-
-    public class Address : IAddressDefinition, IEquatable<Address>
+    public class AddressDto : IAddressDefinition, IEquatable<Address>
     {
-        public IObjectIdentifier<ulong> Id { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
-        public string Street { get; set;}
-        public string State { get; set; }
-        public string BuildingNumber { get; set; }
-        public string FlatNumber { get; set; }
+        public IObjectIdentifier<ulong> Id { get; }
+        public string Country { get; }
+        public string City { get; }
+        public string Street { get; }
+        public string State { get; }
+        public string BuildingNumber { get; }
+        public string FlatNumber { get; }
 
-        public Address(
+        private AddressDto(
             IObjectIdentifier<ulong> id,
             string country,
             string city,
@@ -34,14 +34,14 @@ namespace InvoiceManagementStudio.Core.Domain.Address
 
         public override string ToString()
         {
-            return "Address(" +
-                       $"id={Id}, " +
-                       $"country={Country.ToString()}, " +
-                       $"city={City.ToString()}, " +
-                       $"street={Street.ToString()}, " +
-                       $"state={State.ToString()}, " +
-                       $"buildingNumber={BuildingNumber.ToString()}, " +
-                       $"flatNumber={FlatNumber.ToString()}, " +
+            return "AddressDto(" +
+                   $"id={Id}, " +
+                   $"country={Country.ToString()}, " +
+                   $"city={City.ToString()}, " +
+                   $"street={Street.ToString()}, " +
+                   $"state={State.ToString()}, " +
+                   $"buildingNumber={BuildingNumber.ToString()}, " +
+                   $"flatNumber={FlatNumber.ToString()}, " +
                    ")";
         }
 
@@ -51,10 +51,12 @@ namespace InvoiceManagementStudio.Core.Domain.Address
             {
                 return false;
             }
+
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
+
             return Equals(Id, other.Id) &&
                    Equals(Country, other.Country) &&
                    Equals(City, other.City) &&
@@ -70,14 +72,16 @@ namespace InvoiceManagementStudio.Core.Domain.Address
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-            return obj.GetType() == GetType() && Equals((Address)obj);
+
+            return obj.GetType() == GetType() && Equals((Address) obj);
         }
 
-        public override int GetHashCode() 
+        public override int GetHashCode()
         {
             unchecked
             {
@@ -93,17 +97,18 @@ namespace InvoiceManagementStudio.Core.Domain.Address
             }
         }
 
-        public static Address Create(
-            string country,
-            string city,
-            string street,
-            string state,
-            string buildingNumber,
-            string flatNumber
-        )
+        public static AddressDto FromDomain(Address address)
         {
-            return new Address(null, country, city,  street, state, buildingNumber, flatNumber);
+            return new AddressDto(
+                address.Id,
+                address.Country,
+                address.City,
+                address.Street,
+                address.State,
+                address.BuildingNumber,
+                address.FlatNumber
+            );
         }
-
     }
+
 }

@@ -71,6 +71,7 @@
     <Compile Include="Core\Application\Payment\IInvoicePaymentRepository.cs" />
     <Compile Include="Core\Application\Payment\IInvoicePaymentService.cs" />
     <Compile Include="Core\Domain\Address\Address.cs" />
+    <Compile Include="Core\Domain\Address\AddressDto.cs" />
     <Compile Include="Core\Domain\BillingInfo\BillingInfo.cs" />
     <Compile Include="Core\Domain\ContactInfo\ContactInfo.cs" />
     <Compile Include="Core\Domain\Entity\Entity.cs" />
@@ -114,7 +115,6 @@
     <Compile Include="Core\Domain\Entity\IEntityDefinition.cs" />
     <Compile Include="Core\Domain\Entity\Receiver\IEntityReceiverDefinition.cs" />
     <Compile Include="Core\Domain\Entity\Supplier\IEntitySupplierDefinition.cs" />
-    <Compile Include="Core\Domain\IDataTransferObject.cs" />
     <Compile Include="Core\Domain\Invoice\IInvoiceDefinition.cs" />
     <Compile Include="Core\Domain\IObjectIdentifier.cs" />
     <Compile Include="Core\Domain\Item\EUnitType.cs" />
@@ -126,15 +126,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Dto\AddressDto.cs" />
-    <Compile Include="Model\Dto\BillingInfoDto.cs" />
-    <Compile Include="Model\Dto\ContactInfoDto.cs" />
-    <Compile Include="Model\Dto\EntityDto.cs" />
-    <Compile Include="Model\Dto\EntityReceiverDto.cs" />
-    <Compile Include="Model\Dto\EntitySupplierDto.cs" />
-    <Compile Include="Model\Dto\InvoiceDto.cs" />
-    <Compile Include="Model\Dto\InvoiceItemDto.cs" />
-    <Compile Include="Model\Dto\InvoicePaymentDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -161,9 +152,6 @@
     <Content Include="..\readme.md">
       <Link>readme.md</Link>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Domain" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

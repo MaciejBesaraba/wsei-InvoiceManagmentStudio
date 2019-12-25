@@ -1,10 +1,7 @@
 using System;
 using System.Globalization;
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Payment;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.Payment
 {
 
     public class InvoicePayment : IInvoicePaymentDefinition, IEquatable<InvoicePayment>

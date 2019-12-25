@@ -1,9 +1,6 @@
 using System;
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Address;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.Address
 {
 
     public class Address : IAddressDefinition, IEquatable<Address>

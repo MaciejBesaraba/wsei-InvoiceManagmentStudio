@@ -1,11 +1,7 @@
 using System;
-
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.BillingInfo;
 using InvoiceManagementStudio.Core.Definition.Address;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.BillingInfo
 {
     public class BillingInfo : IBillingInfoDefinition, IEquatable<BillingInfo>
     {

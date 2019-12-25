@@ -1,12 +1,8 @@
 using System;
-
-using InvoiceManagementStudio.Core.Definition;
 using InvoiceManagementStudio.Core.Definition.BillingInfo;
 using InvoiceManagementStudio.Core.Definition.ContactInfo;
-using InvoiceManagementStudio.Core.Definition.Entity;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.Entity
 {
 
     public abstract class Entity : IEntityDefinition, IEquatable<Entity>

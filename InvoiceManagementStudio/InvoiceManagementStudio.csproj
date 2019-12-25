@@ -50,19 +50,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\Definition\Address\Address.cs" />
     <Compile Include="Core\Definition\Address\IAddressRepository.cs" />
     <Compile Include="Core\Definition\Address\IAddressService.cs" />
+    <Compile Include="Core\Definition\BillingInfo\BillingInfo.cs" />
     <Compile Include="Core\Definition\BillingInfo\IBillingInfoRepository.cs" />
     <Compile Include="Core\Definition\BillingInfo\IBillingInfoService.cs" />
+    <Compile Include="Core\Definition\ContactInfo\ContactInfo.cs" />
     <Compile Include="Core\Definition\ContactInfo\IContactInfoReporitory.cs" />
     <Compile Include="Core\Definition\ContactInfo\IContactInfoService.cs" />
+    <Compile Include="Core\Definition\Entity\Entity.cs" />
     <Compile Include="Core\Definition\Entity\IEntityRepository.cs" />
     <Compile Include="Core\Definition\Entity\IEntityService.cs" />
+    <Compile Include="Core\Definition\Entity\Receiver\EntityReceiver.cs" />
     <Compile Include="Core\Definition\Entity\Receiver\IEntityReceiverRepository.cs" />
     <Compile Include="Core\Definition\Entity\Receiver\IEntityReceiverService.cs" />
+    <Compile Include="Core\Definition\Entity\Supplier\EntitySupplier.cs" />
     <Compile Include="Core\Definition\Entity\Supplier\IEntitySupplierRepository.cs" />
     <Compile Include="Core\Definition\Entity\Supplier\IEntitySupplierService.cs" />
+    <Compile Include="Core\Definition\Invoice\Invoice.cs" />
+    <Compile Include="Core\Definition\Item\InvoiceItem.cs" />
     <Compile Include="Core\Definition\Payment\EPaymentType.cs" />
+    <Compile Include="Core\Definition\Payment\InvoicePayment.cs" />
     <Compile Include="Repository\InMemory\AddressInMemoryRepository.cs" />
     <Compile Include="Repository\InMemory\BillingInfoInMemoryRepository.cs" />
     <Compile Include="Repository\InMemory\ContactInfoInMemoryRepository.cs" />
@@ -116,15 +125,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Domain\Address.cs" />
-    <Compile Include="Model\Domain\BillingInfo.cs" />
-    <Compile Include="Model\Domain\ContactInfo.cs" />
-    <Compile Include="Model\Domain\Entity.cs" />
-    <Compile Include="Model\Domain\EntityReceiver.cs" />
-    <Compile Include="Model\Domain\EntitySupplier.cs" />
-    <Compile Include="Model\Domain\Invoice.cs" />
-    <Compile Include="Model\Domain\InvoiceItem.cs" />
-    <Compile Include="Model\Domain\InvoicePayment.cs" />
     <Compile Include="Model\Dto\AddressDto.cs" />
     <Compile Include="Model\Dto\BillingInfoDto.cs" />
     <Compile Include="Model\Dto\ContactInfoDto.cs" />
@@ -161,6 +161,9 @@
     <Content Include="..\readme.md">
       <Link>readme.md</Link>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Domain" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

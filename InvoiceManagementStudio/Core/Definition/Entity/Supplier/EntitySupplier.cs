@@ -1,15 +1,13 @@
-using InvoiceManagementStudio.Core.Definition;
 using InvoiceManagementStudio.Core.Definition.BillingInfo;
 using InvoiceManagementStudio.Core.Definition.ContactInfo;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.Entity.Supplier
 {
 
-    public class EntityReceiver : Entity
+    public class EntitySupplier : Entity
     {
 
-        public EntityReceiver(
+        public EntitySupplier(
             IObjectIdentifier<ulong> id,
             IBillingInfoDefinition billingInfo,
             IContactInfoDefinition contactInfo
@@ -17,7 +15,7 @@ namespace InvoiceManagementStudio.Model.Domain
         {
             
         }
-
+        
     }
 
 }

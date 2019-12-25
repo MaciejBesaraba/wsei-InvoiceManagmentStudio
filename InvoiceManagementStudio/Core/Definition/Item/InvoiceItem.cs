@@ -1,10 +1,7 @@
 using System;
 using System.Globalization;
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Item;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.Item
 {
 
     public class InvoiceItem : IInvoiceItemDefinition, IEquatable<InvoiceItem>

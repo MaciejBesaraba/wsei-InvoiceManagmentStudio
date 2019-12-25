@@ -1,11 +1,7 @@
 using System;
-
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.ContactInfo;
 using InvoiceManagementStudio.Core.Definition.Entity;
 
-
-namespace InvoiceManagementStudio.Model.Domain
+namespace InvoiceManagementStudio.Core.Definition.ContactInfo
 {
     public class ContactInfo : IContactInfoDefinition, IEquatable<ContactInfo>
     {

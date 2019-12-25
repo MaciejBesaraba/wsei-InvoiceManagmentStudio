@@ -50,28 +50,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\Application\Address\IAddressRepository.cs" />
+    <Compile Include="Core\Application\Address\IAddressService.cs" />
+    <Compile Include="Core\Application\BillingInfo\IBillingInfoRepository.cs" />
+    <Compile Include="Core\Application\BillingInfo\IBillingInfoService.cs" />
+    <Compile Include="Core\Application\ContactInfo\IContactInfoReporitory.cs" />
+    <Compile Include="Core\Application\ContactInfo\IContactInfoService.cs" />
+    <Compile Include="Core\Application\Entity\IEntityRepository.cs" />
+    <Compile Include="Core\Application\Entity\IEntityService.cs" />
+    <Compile Include="Core\Application\Entity\Receiver\IEntityReceiverRepository.cs" />
+    <Compile Include="Core\Application\Entity\Receiver\IEntityReceiverService.cs" />
+    <Compile Include="Core\Application\Entity\Supplier\IEntitySupplierRepository.cs" />
+    <Compile Include="Core\Application\Entity\Supplier\IEntitySupplierService.cs" />
+    <Compile Include="Core\Application\ICrudRepository.cs" />
+    <Compile Include="Core\Application\ICrudService.cs" />
+    <Compile Include="Core\Application\Invoice\IInvoiceRepository.cs" />
+    <Compile Include="Core\Application\Invoice\IInvoiceService.cs" />
+    <Compile Include="Core\Application\Item\IInvoiceItemRepository.cs" />
+    <Compile Include="Core\Application\Item\IInvoiceItemService.cs" />
+    <Compile Include="Core\Application\Payment\IInvoicePaymentRepository.cs" />
+    <Compile Include="Core\Application\Payment\IInvoicePaymentService.cs" />
     <Compile Include="Core\Domain\Address\Address.cs" />
-    <Compile Include="Core\Domain\Address\IAddressRepository.cs" />
-    <Compile Include="Core\Domain\Address\IAddressService.cs" />
     <Compile Include="Core\Domain\BillingInfo\BillingInfo.cs" />
-    <Compile Include="Core\Domain\BillingInfo\IBillingInfoRepository.cs" />
-    <Compile Include="Core\Domain\BillingInfo\IBillingInfoService.cs" />
     <Compile Include="Core\Domain\ContactInfo\ContactInfo.cs" />
-    <Compile Include="Core\Domain\ContactInfo\IContactInfoReporitory.cs" />
-    <Compile Include="Core\Domain\ContactInfo\IContactInfoService.cs" />
     <Compile Include="Core\Domain\Entity\Entity.cs" />
-    <Compile Include="Core\Domain\Entity\IEntityRepository.cs" />
-    <Compile Include="Core\Domain\Entity\IEntityService.cs" />
     <Compile Include="Core\Domain\Entity\Receiver\EntityReceiver.cs" />
-    <Compile Include="Core\Domain\Entity\Receiver\IEntityReceiverRepository.cs" />
-    <Compile Include="Core\Domain\Entity\Receiver\IEntityReceiverService.cs" />
     <Compile Include="Core\Domain\Entity\Supplier\EntitySupplier.cs" />
-    <Compile Include="Core\Domain\Entity\Supplier\IEntitySupplierRepository.cs" />
-    <Compile Include="Core\Domain\Entity\Supplier\IEntitySupplierService.cs" />
     <Compile Include="Core\Domain\Invoice\Invoice.cs" />
     <Compile Include="Core\Domain\Item\InvoiceItem.cs" />
     <Compile Include="Core\Domain\Payment\EPaymentType.cs" />
     <Compile Include="Core\Domain\Payment\InvoicePayment.cs" />
+    <Compile Include="Core\Domain\SimpleObjectIdentifier.cs" />
     <Compile Include="Repository\InMemory\AddressInMemoryRepository.cs" />
     <Compile Include="Repository\InMemory\BillingInfoInMemoryRepository.cs" />
     <Compile Include="Repository\InMemory\ContactInfoInMemoryRepository.cs" />
@@ -105,20 +114,12 @@
     <Compile Include="Core\Domain\Entity\IEntityDefinition.cs" />
     <Compile Include="Core\Domain\Entity\Receiver\IEntityReceiverDefinition.cs" />
     <Compile Include="Core\Domain\Entity\Supplier\IEntitySupplierDefinition.cs" />
-    <Compile Include="Core\Domain\ICrudRepository.cs" />
-    <Compile Include="Core\Domain\ICrudService.cs" />
     <Compile Include="Core\Domain\IDataTransferObject.cs" />
     <Compile Include="Core\Domain\Invoice\IInvoiceDefinition.cs" />
-    <Compile Include="Core\Domain\Invoice\IInvoiceRepository.cs" />
-    <Compile Include="Core\Domain\Invoice\IInvoiceService.cs" />
     <Compile Include="Core\Domain\IObjectIdentifier.cs" />
     <Compile Include="Core\Domain\Item\EUnitType.cs" />
     <Compile Include="Core\Domain\Item\IInvoiceItemDefinition.cs" />
-    <Compile Include="Core\Domain\Item\IInvoiceItemRepository.cs" />
-    <Compile Include="Core\Domain\Item\IInvoiceItemService.cs" />
     <Compile Include="Core\Domain\Payment\IInvoicePaymentDefinition.cs" />
-    <Compile Include="Core\Domain\Payment\IInvoicePaymentRepository.cs" />
-    <Compile Include="Core\Domain\Payment\IInvoicePaymentService.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -134,7 +135,6 @@
     <Compile Include="Model\Dto\InvoiceDto.cs" />
     <Compile Include="Model\Dto\InvoiceItemDto.cs" />
     <Compile Include="Model\Dto\InvoicePaymentDto.cs" />
-    <Compile Include="Model\SimpleObjectIdentifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

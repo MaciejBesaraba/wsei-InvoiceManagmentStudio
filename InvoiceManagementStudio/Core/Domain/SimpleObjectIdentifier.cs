@@ -1,8 +1,6 @@
 using System;
-using InvoiceManagementStudio.Core.Domain;
 
-
-namespace InvoiceManagementStudio.Model
+namespace InvoiceManagementStudio.Core.Domain
 {
 
     public class SimpleObjectIdentifier : IObjectIdentifier<ulong>, IEquatable<SimpleObjectIdentifier>

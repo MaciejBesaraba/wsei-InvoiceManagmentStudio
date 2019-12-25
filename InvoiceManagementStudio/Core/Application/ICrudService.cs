@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using InvoiceManagementStudio.Core.Domain;
 
-namespace InvoiceManagementStudio.Core.Domain
+namespace InvoiceManagementStudio.Core.Application
 {
 
     /// <summary>

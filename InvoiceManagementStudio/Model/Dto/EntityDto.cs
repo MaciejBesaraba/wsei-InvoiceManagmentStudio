@@ -1,6 +1,5 @@
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity;
-
+using InvoiceManagementStudio.Core.Domain;
+using InvoiceManagementStudio.Core.Domain.Entity;
 
 namespace InvoiceManagementStudio.Model.Dto
 {

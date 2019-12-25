@@ -1,6 +1,5 @@
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.BillingInfo;
-
+using InvoiceManagementStudio.Core.Domain;
+using InvoiceManagementStudio.Core.Domain.BillingInfo;
 
 namespace InvoiceManagementStudio.Model.Dto
 {

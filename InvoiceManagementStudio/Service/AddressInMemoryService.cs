@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Address;
-
+using InvoiceManagementStudio.Core.Domain.Address;
 
 namespace InvoiceManagementStudio.Service
 {

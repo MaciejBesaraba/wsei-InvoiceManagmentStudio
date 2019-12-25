@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Entity.Supplier;
-
+using InvoiceManagementStudio.Core.Domain.Entity.Supplier;
 
 namespace InvoiceManagementStudio.Service
 {

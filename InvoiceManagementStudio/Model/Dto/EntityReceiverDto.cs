@@ -1,6 +1,5 @@
-using InvoiceManagementStudio.Core.Definition;
-using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
-
+using InvoiceManagementStudio.Core.Domain;
+using InvoiceManagementStudio.Core.Domain.Entity.Receiver;
 
 namespace InvoiceManagementStudio.Model.Dto
 {

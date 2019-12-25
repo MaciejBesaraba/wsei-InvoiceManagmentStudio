@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Entity.Receiver;
-
+using InvoiceManagementStudio.Core.Domain.Entity.Receiver;
 
 namespace InvoiceManagementStudio.Repository.InMemory
 {

@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.ContactInfo;
-
+using InvoiceManagementStudio.Core.Domain.ContactInfo;
 
 namespace InvoiceManagementStudio.Service
 {

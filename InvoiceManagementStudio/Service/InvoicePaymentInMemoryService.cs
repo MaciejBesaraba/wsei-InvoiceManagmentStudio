@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Payment;
-
+using InvoiceManagementStudio.Core.Domain.Payment;
 
 namespace InvoiceManagementStudio.Service
 {

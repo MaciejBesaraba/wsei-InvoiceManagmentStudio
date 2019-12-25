@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Item;
-
+using InvoiceManagementStudio.Core.Domain.Item;
 
 namespace InvoiceManagementStudio.Repository.InMemory
 {

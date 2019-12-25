@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.Invoice;
-
+using InvoiceManagementStudio.Core.Domain.Invoice;
 
 namespace InvoiceManagementStudio.Service
 {

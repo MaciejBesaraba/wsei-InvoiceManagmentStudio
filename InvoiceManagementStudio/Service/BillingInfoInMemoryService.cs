@@ -1,5 +1,4 @@
-using InvoiceManagementStudio.Core.Definition.BillingInfo;
-
+using InvoiceManagementStudio.Core.Domain.BillingInfo;
 
 namespace InvoiceManagementStudio.Service
 {

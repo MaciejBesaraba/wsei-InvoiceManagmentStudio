@@ -1,5 +1,5 @@
 using System;
-using InvoiceManagementStudio.Core.Definition;
+using InvoiceManagementStudio.Core.Domain;
 
 
 namespace InvoiceManagementStudio.Model

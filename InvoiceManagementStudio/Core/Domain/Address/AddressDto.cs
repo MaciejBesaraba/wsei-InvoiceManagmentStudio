@@ -3,7 +3,7 @@ using System;
 
 namespace InvoiceManagementStudio.Core.Domain.Address
 {
-    public class AddressDto : IAddressDefinition, IEquatable<Address>
+    public class AddressDto : IAddressDefinition, IEquatable<AddressDto>
     {
         public IObjectIdentifier<ulong> Id { get; }
         public string Country { get; }
@@ -45,7 +45,7 @@ namespace InvoiceManagementStudio.Core.Domain.Address
                    ")";
         }
 
-        public bool Equals(Address other)
+        public bool Equals(AddressDto other)
         {
             if (ReferenceEquals(null, other))
             {

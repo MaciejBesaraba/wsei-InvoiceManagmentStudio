@@ -1,16 +1,26 @@
 using System;
 
+
 namespace Core.Domain.Address
 {
     public class AddressDto : IAddressDefinition, IEquatable<AddressDto>
     {
-        public IObjectIdentifier<ulong> Id { get; }
-        public string Country { get; }
-        public string City { get; }
-        public string Street { get; }
-        public string State { get; }
-        public string BuildingNumber { get; }
-        public string FlatNumber { get; }
+        private readonly IObjectIdentifier<ulong> _id;
+        private readonly string _country;
+        private readonly string _city;
+        private readonly string _street;
+        private readonly string _state;
+        private readonly string _buildingNumber;
+        private readonly string _flatNumber;
+
+        public IObjectIdentifier<ulong> Id => _id;
+        public string Country => _country;
+        public string City => _city;
+        public string Street => _street;
+        public string State => _state;
+        public string BuildingNumber => _buildingNumber;
+        public string FlatNumber => _flatNumber;
+
 
         private AddressDto(
             IObjectIdentifier<ulong> id,
@@ -22,25 +32,25 @@ namespace Core.Domain.Address
             string flatNumber
         )
         {
-            Id = id;
-            Country = country;
-            City = city;
-            Street = street;
-            State = state;
-            BuildingNumber = buildingNumber;
-            FlatNumber = flatNumber;
+            _id = id;
+            _country = country;
+            _city = city;
+            _street = street;
+            _state = state;
+            _buildingNumber = buildingNumber;
+            _flatNumber = flatNumber;
         }
 
         public override string ToString()
         {
             return "AddressDto(" +
                    $"id={Id}, " +
-                   $"country={Country.ToString()}, " +
-                   $"city={City.ToString()}, " +
-                   $"street={Street.ToString()}, " +
-                   $"state={State.ToString()}, " +
-                   $"buildingNumber={BuildingNumber.ToString()}, " +
-                   $"flatNumber={FlatNumber.ToString()}, " +
+                   $"country={Country}, " +
+                   $"city={City}, " +
+                   $"street={Street}, " +
+                   $"state={State}, " +
+                   $"buildingNumber={BuildingNumber}, " +
+                   $"flatNumber={FlatNumber}, " +
                    ")";
         }
 
@@ -50,19 +60,17 @@ namespace Core.Domain.Address
             {
                 return false;
             }
-
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
-
-            return Equals(Id, other.Id) &&
-                   Equals(Country, other.Country) &&
-                   Equals(City, other.City) &&
-                   Equals(Street, other.Street) &&
-                   Equals(State, other.State) &&
-                   Equals(BuildingNumber, other.BuildingNumber) &&
-                   Equals(FlatNumber, other.FlatNumber);
+            return Equals(_id, other._id) &&
+                   string.Equals(_country, other._country) &&
+                   string.Equals(_city, other._city) &&
+                   string.Equals(_street, other._street) &&
+                   string.Equals(_state, other._state) &&
+                   string.Equals(_buildingNumber, other._buildingNumber) &&
+                   string.Equals(_flatNumber, other._flatNumber);
         }
 
         public override bool Equals(object obj)
@@ -71,27 +79,28 @@ namespace Core.Domain.Address
             {
                 return false;
             }
-
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
-
-            return obj.GetType() == GetType() && Equals((Address) obj);
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+            return Equals((AddressDto) obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                var hashCode = (Id != null ? Id.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Country != null ? Country.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (City != null ? City.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Street != null ? Street.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (State != null ? State.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (BuildingNumber != null ? BuildingNumber.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (FlatNumber != null ? FlatNumber.GetHashCode() : 0);
-
+                var hashCode = (_id != null ? _id.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_country != null ? _country.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_city != null ? _city.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_street != null ? _street.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_state != null ? _state.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_buildingNumber != null ? _buildingNumber.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_flatNumber != null ? _flatNumber.GetHashCode() : 0);
                 return hashCode;
             }
         }

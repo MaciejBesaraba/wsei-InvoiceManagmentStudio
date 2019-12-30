@@ -18,6 +18,21 @@ namespace Core.Domain.BillingInfo
         public IAddressDefinition BillingAddress => _billingAddress;
         //add properties with get only
 
+        private BillingInfoDto(
+            IObjectIdentifier<ulong> id,
+            string companyName,
+            string zipCode,
+            IAddressDefinition billingAddress
+
+)
+        {
+            _id = id;
+            _companyName = companyName;
+            _zipCode = zipCode;
+            _billingAddress = billingAddress;
+
+        }
+        //add private constructor
 
         public override string ToString()
         {

@@ -12,10 +12,11 @@ namespace Core.Domain.BillingInfo
         private readonly IAddressDefinition _billingAddress;
         //add backing fields
 
-
-
-
-
+        public IObjectIdentifier<ulong> Id => _id;
+        public string CompanyName => _companyName;
+        public string ZipCode => _zipCode;
+        public IAddressDefinition BillingAddress => _billingAddress;
+        //add properties with get only
 
 
         public override string ToString()

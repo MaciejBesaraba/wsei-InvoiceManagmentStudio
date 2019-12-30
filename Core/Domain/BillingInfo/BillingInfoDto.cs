@@ -90,6 +90,18 @@ namespace Core.Domain.BillingInfo
             }
         }
 
+        public static BillingInfoDto FromDomain(BillingInfo billingInfo)
+        {
+            return new BillingInfoDto(
+                billingInfo.Id,
+                billingInfo.CompanyName,
+                billingInfo.ZipCode,
+                billingInfo.BillingAddress
+
+            );
+        }
+        //add fromDomain method
+
 
     }
 

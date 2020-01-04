@@ -15,7 +15,7 @@ namespace Core.Domain.ContactInfo
         private readonly string _surname;
 
         public IObjectIdentifier<ulong> Id => _id;
-        public string Email => _email;
+        public string Email=> _email;
         public string Phone => _phone;
         public string Mobile => _mobile;
         public string Title => _title;
@@ -93,7 +93,7 @@ namespace Core.Domain.ContactInfo
             {
                 return false;
             }
-            return Equals((ContactInfoDto)obj);
+            return Equals((ContactInfoDto) obj);
         }
 
         public override int GetHashCode()
@@ -112,6 +112,19 @@ namespace Core.Domain.ContactInfo
             }
         }
 
-    }    
+        public static ContactInfoDto FromDomain(ContactInfo contactInfo)
+        {
+            return new ContactInfoDto(
+                contactInfo.Id,
+                contactInfo.Email,
+                contactInfo.Phone,
+                contactInfo.Mobile,
+                contactInfo.Title,
+                contactInfo.Sex,
+                contactInfo.Name,
+                contactInfo.Surname
+            );
+        }
+    }
 
 }

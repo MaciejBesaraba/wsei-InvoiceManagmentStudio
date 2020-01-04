@@ -45,6 +45,73 @@ namespace Core.Domain.ContactInfo
             _surname = surname;
         }
 
+        public override string ToString()
+        {
+            return "ContactInfoDto(" +
+                   $"id={Id}, " +
+                   $"email={Email}, " +
+                   $"phone={Phone}, " +
+                   $"mobile={Mobile}, " +
+                   $"title={Title}, " +
+                   $"sex={Sex}, " +
+                   $"name={Name}, " +
+                   $"surname={Surname}, " +
+                   ")";
+        }
+
+        public bool Equals(ContactInfoDto other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            return Equals(_id, other._id) &&
+                   string.Equals(_email, other._email) &&
+                   string.Equals(_phone, other._phone) &&
+                   string.Equals(_mobile, other._mobile) &&
+                   string.Equals(_title, other._title) &&
+                   string.Equals(_sex, other._sex) &&
+                   string.Equals(_name, other._name) &&
+                   string.Equals(_surname, other._surname);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+            return Equals((ContactInfoDto)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (_id != null ? _id.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_email != null ? _email.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_phone != null ? _phone.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_mobile != null ? _mobile.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_title != null ? _title.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_sex != null ? _sex.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_name != null ? _name.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_surname != null ? _surname.GetHashCode() : 0);
+                return hashCode;
+            }
+        }
+
     }    
 
 }

@@ -92,6 +92,7 @@ namespace Core.Domain.Entity
                 entity.ContactInfo
             );
         }
+        //add fromDomain method
     }
 
 }

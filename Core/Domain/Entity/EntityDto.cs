@@ -25,6 +25,7 @@ namespace Core.Domain.Entity
             IContactInfoDefinition contactInfo
 
         )
+        //add private constructor
         {
             _id = id;
             _billingInfo = billingInfo;

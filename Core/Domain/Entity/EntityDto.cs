@@ -17,7 +17,7 @@ namespace Core.Domain.Entity
         public IObjectIdentifier<ulong> Id => _id;
         public IBillingInfoDefinition BillingInfo => _billingInfo;
         public IContactInfoDefinition ContactInfo => _contactInfo;
-
+        //add properties with get only
 
         private EntityDto(
             IObjectIdentifier<ulong> id,
@@ -53,7 +53,6 @@ namespace Core.Domain.Entity
             return Equals(_id, other._id) &&
                    IBillingInfoDefinition.Equals(_billingInfo, other._billingInfo) &&
                    IContactInfoDefinition.Equals(_contactInfo, other._contactInfo);
-
         }
 
         public override bool Equals(object obj)

@@ -1,45 +1,32 @@
 using System;
 using Core.Domain.BillingInfo;
 using Core.Domain.ContactInfo;
-using Core.Domain.Entity;
 
 
 namespace Core.Domain.Entity
 {
-    public class EntityDto : IEntityDefinition, IEquatable<EntityDto>
+    public abstract class EntityDto : IEntityDefinition, IEquatable<EntityDto>
     {
         private readonly IObjectIdentifier<ulong> _id;
         private readonly IBillingInfoDefinition _billingInfo;
         private readonly IContactInfoDefinition _contactInfo;
-        //add backing fields
-
 
         public IObjectIdentifier<ulong> Id => _id;
         public IBillingInfoDefinition BillingInfo => _billingInfo;
         public IContactInfoDefinition ContactInfo => _contactInfo;
-        //add properties with get only
 
-        private EntityDto(
+        protected EntityDto(
             IObjectIdentifier<ulong> id,
             IBillingInfoDefinition billingInfo,
             IContactInfoDefinition contactInfo
-
         )
-        //add private constructor
         {
             _id = id;
             _billingInfo = billingInfo;
             _contactInfo = contactInfo;
         }
 
-        public override string ToString()
-        {
-            return "EntityDto(" +
-                   $"id={Id}, " +
-                   $"billingInfo={BillingInfo}, " +
-                   $"contactInfo={ContactInfo}, " +
-                   ")";
-        }
+        public override string ToString() => $"{GetType().Name}(id={Id}, billingInfo={BillingInfo}, contactInfo={ContactInfo})";
 
         public bool Equals(EntityDto other)
         {
@@ -66,11 +53,7 @@ namespace Core.Domain.Entity
             {
                 return true;
             }
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-            return Equals((EntityDto)obj);
+            return obj.GetType() == this.GetType() && Equals((EntityDto)obj);
         }
 
         public override int GetHashCode()
@@ -83,16 +66,6 @@ namespace Core.Domain.Entity
                 return hashCode;
             }
         }
-
-        public static EntityDto FromDomain(Entity entity)
-        {
-            return new EntityDto(
-                entity.Id,
-                entity.BillingInfo,
-                entity.ContactInfo
-            );
-        }
-        //add fromDomain method
     }
 
 }

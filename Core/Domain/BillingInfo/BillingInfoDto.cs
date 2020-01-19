@@ -10,21 +10,18 @@ namespace Core.Domain.BillingInfo
         private readonly string _companyName;
         private readonly string _zipCode;
         private readonly IAddressDefinition _billingAddress;
-        //add backing fields
 
         public IObjectIdentifier<ulong> Id => _id;
         public string CompanyName => _companyName;
         public string ZipCode => _zipCode;
         public IAddressDefinition BillingAddress => _billingAddress;
-        //add properties with get only
 
         private BillingInfoDto(
             IObjectIdentifier<ulong> id,
             string companyName,
             string zipCode,
             IAddressDefinition billingAddress
-
-)
+        )
         {
             _id = id;
             _companyName = companyName;
@@ -32,15 +29,14 @@ namespace Core.Domain.BillingInfo
             _billingAddress = billingAddress;
 
         }
-        //add private constructor
 
         public override string ToString()
         {
             return "BillingInfoDto(" +
-                   $"id={Id}, " +
-                   $"companyName={CompanyName}, " +
-                   $"zipCode={ZipCode}, " +
-                   $"billingAddress={BillingAddress}, " +
+                       $"id={Id}, " +
+                       $"companyName={CompanyName}, " +
+                       $"zipCode={ZipCode}, " +
+                       $"billingAddress={BillingAddress}" +
                    ")";
         }
 
@@ -55,9 +51,9 @@ namespace Core.Domain.BillingInfo
                 return true;
             }
             return Equals(_id, other._id) &&
-                   string.Equals(_companyName, other._companyName) &&
-                   string.Equals(_zipCode, other._zipCode) &&
-                   string.Equals(_billingAddress, other._billingAddress);
+                   Equals(_companyName, other._companyName) &&
+                   Equals(_zipCode, other._zipCode) &&
+                   Equals(_billingAddress, other._billingAddress);
 
         }
 
@@ -71,11 +67,7 @@ namespace Core.Domain.BillingInfo
             {
                 return true;
             }
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-            return Equals((BillingInfoDto)obj);
+            return obj.GetType() == this.GetType() && Equals((BillingInfoDto)obj);
         }
 
         public override int GetHashCode()
@@ -92,17 +84,8 @@ namespace Core.Domain.BillingInfo
 
         public static BillingInfoDto FromDomain(BillingInfo billingInfo)
         {
-            return new BillingInfoDto(
-                billingInfo.Id,
-                billingInfo.CompanyName,
-                billingInfo.ZipCode,
-                billingInfo.BillingAddress
-
-            );
+            return new BillingInfoDto(billingInfo.Id, billingInfo.CompanyName, billingInfo.ZipCode, billingInfo.BillingAddress);
         }
-        //add fromDomain method
-
-
     }
 
 }

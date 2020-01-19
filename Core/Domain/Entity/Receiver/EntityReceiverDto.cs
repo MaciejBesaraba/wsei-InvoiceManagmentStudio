@@ -16,4 +16,3 @@ namespace Core.Domain.Entity.Receiver
             new EntityReceiverDto(entity.Id, entity.BillingInfo, entity.ContactInfo);
     }
 }
-

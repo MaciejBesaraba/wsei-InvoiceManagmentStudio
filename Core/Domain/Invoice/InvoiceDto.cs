@@ -7,9 +7,9 @@ using Core.Domain.Entity.Supplier;
 using Core.Domain.Item;
 using Core.Domain.Payment;
 
+
 namespace Core.Domain.Invoice
 {
-
     public class InvoiceDto : IInvoiceDefinition, IEquatable<InvoiceDto>
     {
         private readonly IObjectIdentifier<ulong> _id;
@@ -28,7 +28,7 @@ namespace Core.Domain.Invoice
         public List<IInvoiceItemDefinition> Items => _items;
         public List<IInvoicePaymentDefinition> Payments => _payments;
         public IEntitySupplierDefinition Supplier => _supplier;
-        public IEntityReceiverDefinition Reciever => _reciever;
+        public IEntityReceiverDefinition Receiver => _reciever;
 
 
         private InvoiceDto(
@@ -64,27 +64,31 @@ namespace Core.Domain.Invoice
 
         public decimal Due => Total - Payed;
 
-        public IEntityReceiverDefinition Receiver => throw new NotImplementedException();
-
         public bool IsPayed => Total >= Payed;
 
         public override string ToString()
         {
-            return "InoviceDto(" +
-                   $"id={Id}, " +
-                   $"isPayed={IsPayed}, " +
-                   $"issueDate={IssueDate}, " +
-                   $"dueDate={DueDate}, " +
-                   $"redemptionDate={RedemptionDate}, " +
-                   $"items={Items}, " +
-                   $"payments={Payments}, " +
-                   $"supplier={Supplier}, " +
-                   $"reciever={Reciever}, " +
-                   $"total={Total}, " +
-                   $"subtotal={Subtotal}, " +
-                   $"discount={Discount}, " +
-                   $"payed={Payed}, " +
-                   $"due={Due}, " +
+            // TODO ArBy global culture, datetime format
+            var formattedIssueDate = IssueDate.ToString("yyyy-MM-dd");
+            var formattedDueDate = DueDate.ToString("yyyy-MM-dd");
+            var formattedRedemptionDate = RedemptionDate != null ? RedemptionDate.Value.ToString("yyyy-MM-dd") : "n/a";
+
+            return "Invoice(" +
+                       $"serial={Serial}, " +
+                       $"id={Id}, " +
+                       $"isPayed={IsPayed.ToString()}, " +
+                       $"issueDate={formattedIssueDate}, " +
+                       $"dueDate={formattedDueDate}, " +
+                       $"redemptionDate={formattedRedemptionDate}, " +
+                       $"supplier={Supplier}, " +
+                       $"receiver={Receiver}, " +
+                       $"total={Total.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"subtotal={Subtotal.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"discount={Discount.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"payed={Payed.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"due={Due.ToString(CultureInfo.InvariantCulture)}, " +
+                       $"items=[{string.Join(", ", Items)}], " +
+                       $"payments=[{string.Join(", ", Payments)}]" +
                    ")";
         }
 
@@ -98,14 +102,15 @@ namespace Core.Domain.Invoice
             {
                 return true;
             }
-            return Equals(_id, other._id) &&
-                   DateTime.Equals(_issueDate, other._issueDate) &&
-                   DateTime.Equals(_dueDate, other._dueDate) &&
-                   DateTime.Equals(_redemptionDate, other._redemptionDate) &&
-                   List<IInvoiceItemDefinition>.Equals(_items, other._items) &&
-                   List<IInvoicePaymentDefinition>.Equals(_payments, other._payments) &&
-                   IEntitySupplierDefinition.Equals(_supplier, other._supplier) &&
-                   IEntityReceiverDefinition.Equals(_reciever, other._reciever);
+            // TODO ArBy redemptionDate equality
+            return Equals(Id, other.Id) &&
+                   IssueDate.Equals(other.IssueDate) &&
+                   DueDate.Equals(other.DueDate) &&
+                   RedemptionDate.Equals(other.RedemptionDate) &&
+                   Equals(Items, other.Items) &&
+                   Equals(Payments, other.Payments) &&
+                   Equals(Supplier, other.Supplier) &&
+                   Equals(Receiver, other.Receiver);
         }
 
         public override bool Equals(object obj)
@@ -118,11 +123,7 @@ namespace Core.Domain.Invoice
             {
                 return true;
             }
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-            return Equals((InvoiceDto)obj);
+            return obj.GetType() == this.GetType() && Equals((InvoiceDto)obj);
         }
 
         public override int GetHashCode()
@@ -151,9 +152,8 @@ namespace Core.Domain.Invoice
                 invoice.Items,
                 invoice.Payments,
                 invoice.Supplier,
-                invoice.Reciever
+                invoice.Receiver
             );
         }
     }
-
 }

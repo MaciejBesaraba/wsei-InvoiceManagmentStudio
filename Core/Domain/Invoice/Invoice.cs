@@ -12,14 +12,14 @@ namespace Core.Domain.Invoice
 
     public class Invoice : IInvoiceDefinition, IEquatable<Invoice>
     {
-        public IObjectIdentifier<ulong> Id { get; }
-        public DateTime IssueDate { get; }
-        public DateTime DueDate { get; }
-        public DateTime? RedemptionDate { get; }
-        public List<IInvoiceItemDefinition> Items { get; }
-        public List<IInvoicePaymentDefinition> Payments { get; }
-        public IEntitySupplierDefinition Supplier { get; }
-        public IEntityReceiverDefinition Receiver { get; }
+        public IObjectIdentifier<ulong> Id { get; set; }
+        public DateTime IssueDate { get; set; }
+        public DateTime DueDate { get; set; }
+        public DateTime? RedemptionDate { get; set; }
+        public List<IInvoiceItemDefinition> Items { get; set; }
+        public List<IInvoicePaymentDefinition> Payments { get; set; }
+        public IEntitySupplierDefinition Supplier { get; set; }
+        public IEntityReceiverDefinition Receiver { get; set; }
 
 
         public Invoice(
@@ -119,7 +119,6 @@ namespace Core.Domain.Invoice
             {
                 return true;
             }
-
             return obj.GetType() == GetType() && Equals((Invoice) obj);
         }
 

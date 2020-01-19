@@ -5,15 +5,14 @@ namespace Core.Domain.ContactInfo
 {
     public class ContactInfo : IContactInfoDefinition, IEquatable<ContactInfo>
     {
-        public IObjectIdentifier<ulong> Id { get; }
-        public string Email { get; }
-        public string Phone { get; }
-        public string Mobile { get; }
-        public string Title { get; }
-        public ESex Sex { get; }
-        public string Name { get; }
-        public string Surname { get; }
-
+        public IObjectIdentifier<ulong> Id { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Mobile { get; set; }
+        public string Title { get; set; }
+        public ESex Sex { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
 
         public ContactInfo(
             IObjectIdentifier<ulong> id,

@@ -1,0 +1,15 @@
+CREATE DATABASE ivms;
+
+
+DROP TABLE IF EXISTS address;
+
+
+CREATE TABLE address (
+  id SERIAL PRIMARY KEY,
+  country VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  state VARCHAR(255) NOT NULL,
+  building_number INTEGER NOT NULL,
+  flat_number INTEGER
+);

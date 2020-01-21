@@ -77,6 +77,9 @@
     <Compile Include="Domain\Entity\Supplier\EntitySupplier.cs" />
     <Compile Include="Domain\Entity\Supplier\EntitySupplierDto.cs" />
     <Compile Include="Domain\Entity\Supplier\IEntitySupplierDefinition.cs" />
+    <Compile Include="Domain\Exception\DbAccessException.cs" />
+    <Compile Include="Domain\Exception\DbDataIntegrityException.cs" />
+    <Compile Include="Domain\Exception\ResourceNotFoundException.cs" />
     <Compile Include="Domain\Invoice\IInvoiceDefinition.cs" />
     <Compile Include="Domain\Invoice\Invoice.cs" />
     <Compile Include="Domain\Invoice\InvoiceDto.cs" />

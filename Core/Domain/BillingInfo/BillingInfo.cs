@@ -76,5 +76,13 @@ namespace Core.Domain.BillingInfo
                 return hashCode;
             }
         }
+        public static BillingInfo Create(
+            string companyName,
+            string zipCode,
+            IAddressDefinition billingAddress
+        )
+        {
+            return new BillingInfo(null, companyName, zipCode, billingAddress);
+        }
     }
 }

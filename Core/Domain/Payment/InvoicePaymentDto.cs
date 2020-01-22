@@ -102,5 +102,6 @@ namespace Core.Domain.Payment
                 invoicePayment.Amount
             );
         }
+        //add fromdomain method
     }
 }

@@ -18,6 +18,7 @@ namespace Core.Domain.Payment
         public DateTime Date => _date;
         public TimeZoneInfo TimeZone => _timeZone;
         public decimal Amount => _amount;
+        //add properties with get only
 
         private InvoicePaymentDto(
             IObjectIdentifier<ulong> id,

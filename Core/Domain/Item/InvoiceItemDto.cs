@@ -126,7 +126,7 @@ namespace Core.Domain.Item
                 invoiceItem.Quantity
             );
         }
-
+        //add fromdomain method
     }
 
 }

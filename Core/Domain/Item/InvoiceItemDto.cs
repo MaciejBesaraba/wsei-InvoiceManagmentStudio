@@ -36,6 +36,7 @@ namespace Core.Domain.Item
             EUnitType unitType,
             decimal discount,
             double quantity
+            //add private constructor
         )
         {
             _id = id;

@@ -27,7 +27,7 @@ namespace Core.Domain.Item
         public EUnitType UnitType => _unitType;
         public decimal Discount => _discount;
         public double Quantity => _quantity;
-
+        //add properties with get only
 
         private InvoiceItemDto(
             IObjectIdentifier<ulong> id,

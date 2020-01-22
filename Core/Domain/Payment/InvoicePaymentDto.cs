@@ -25,6 +25,7 @@ namespace Core.Domain.Payment
             DateTime date,
             TimeZoneInfo timeZone,
             decimal amount
+            //add private constructor
         )
         {
             _id = id;

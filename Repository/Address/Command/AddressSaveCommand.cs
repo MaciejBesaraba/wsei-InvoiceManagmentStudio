@@ -5,7 +5,7 @@ namespace Repository.Address.Command
 {
     public class AddressSaveCommand
     {
-        private const string Sql = "INSERT INTO address(country, city, street, state, building_number, flat_number) VALUES (@Country, @City, @Street, @State, @BuildingNumber, @FlatNumber) RETURNING id;";
+        private const string Sql = "INSERT INTO address(country, city, street, state, building_number, flat_number) VALUES (@country, @city, @street, @state, @building_number, @flat_number) RETURNING id;";
 
         private readonly AddressRowMapper _rowMapper;
         private readonly DataSourceConfig _dataSource;

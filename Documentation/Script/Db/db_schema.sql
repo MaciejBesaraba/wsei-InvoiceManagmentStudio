@@ -3,6 +3,7 @@ CREATE DATABASE ivms;
 
 DROP TABLE IF EXISTS address;
 DROP TABLE IF EXISTS contact_info;
+DROP TABLE IF EXISTS billing_info;
 
 
 CREATE TABLE address (
@@ -16,7 +17,7 @@ CREATE TABLE address (
 );
 
 CREATE TABLE contact_info (
-    id SERIAL PRIMARY KEY ,
+    id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(255),
     mobile VARCHAR(255),
@@ -24,4 +25,11 @@ CREATE TABLE contact_info (
     gender VARCHAR(255),
     name VARCHAR(255) NOT NULL,
     surname VARCHAR(255)
+);
+
+CREATE TABLE billing_info (
+    id SERIAL PRIMARY KEY,
+    company_name VARCHAR(255) NOT NULL,
+    zip_code VARCHAR(20) NOT NULL,
+    address_id BIGINT NOT NULL
 );

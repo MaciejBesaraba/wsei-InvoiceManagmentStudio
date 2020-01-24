@@ -41,7 +41,7 @@ namespace Repository.ContactInfo
         public ContactInfoDomain ToDomain()
         {
             return new Core.Domain.ContactInfo.ContactInfo(
-                new SimpleObjectIdentifier(Id ?? throw new DataException("Address Id is null")),
+                new SimpleObjectIdentifier(Id ?? throw new DataException("ContactInfo Id is null")),
                 Email,
                 Phone,
                 Mobile,

@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractCommand.cs" />
+    <Compile Include="AbstractRowMapper.cs" />
     <Compile Include="Address\AddressEntity.cs" />
     <Compile Include="Address\AddressRepository.cs" />
     <Compile Include="Address\AddressRowMapper.cs" />
@@ -88,10 +89,16 @@
     <Compile Include="Address\Command\AddressFindAllCommand.cs" />
     <Compile Include="Address\Command\AddressFindByIdCommand.cs" />
     <Compile Include="Address\Command\AddressSaveCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoDeleteCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoFindAllCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoFindByIdCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoSaveCommand.cs" />
+    <Compile Include="ContactInfo\ContactInfoEntity.cs" />
+    <Compile Include="ContactInfo\ContactInfoRepository.cs" />
+    <Compile Include="ContactInfo\ContactInfoRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AbstractRowMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
@@ -104,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BillingInfo" />
-    <Folder Include="ContactInfo" />
     <Folder Include="Entity\Receiver" />
     <Folder Include="Entity\Supplier" />
     <Folder Include="Invoice" />

@@ -1,12 +1,14 @@
 using System;
+using System.Data;
 using Core.Domain;
 using Core.Domain.Entity;
+using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
 
 namespace Repository.ContactInfo
 {
     public class ContactInfoEntity
     {
-        public ulong Id { get; set; }
+        public ulong? Id { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
@@ -36,10 +38,10 @@ namespace Repository.ContactInfo
             Surname = surname;
         }
 
-        public Core.Domain.ContactInfo.ContactInfo ToDomain()
+        public ContactInfoDomain ToDomain()
         {
             return new Core.Domain.ContactInfo.ContactInfo(
-                new SimpleObjectIdentifier(Id),
+                new SimpleObjectIdentifier(Id ?? throw new DataException("Address Id is null")),
                 Email,
                 Phone,
                 Mobile,
@@ -50,7 +52,7 @@ namespace Repository.ContactInfo
             );
         }
 
-        public static ContactInfoEntity FromDomain(Core.Domain.ContactInfo.ContactInfo domain)
+        public static ContactInfoEntity FromDomain(ContactInfoDomain domain)
         {
             return new ContactInfoEntity(
                 domain.Id.Value,

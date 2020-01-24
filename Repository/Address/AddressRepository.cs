@@ -4,6 +4,7 @@ using Core.Application.Address;
 using Core.Domain;
 using Core.Domain.Exception;
 using Repository.Address.Command;
+using AddressDomain = Core.Domain.Address.Address;
 
 namespace Repository.Address
 {
@@ -17,13 +18,13 @@ namespace Repository.Address
         }
 
 
-        public List<Core.Domain.Address.Address> FindAll()
+        public List<AddressDomain> FindAll()
         {
             var command = new AddressFindAllCommand(_dataSource);
             return command.Execute().Select(entity => entity.ToDomain()).ToList();
         }
 
-        public Core.Domain.Address.Address FindById(IObjectIdentifier<ulong> id)
+        public AddressDomain FindById(IObjectIdentifier<ulong> id)
         {
             var command = new AddressFindByIdCommand(_dataSource, id.Value);
             var entity = command.Execute() ?? throw new ResourceNotFoundException(typeof(AddressEntity), id);
@@ -31,7 +32,7 @@ namespace Repository.Address
             return entity.ToDomain();
         }
 
-        public Core.Domain.Address.Address Save(Core.Domain.Address.Address address)
+        public AddressDomain Save(AddressDomain address)
         {
             var entity = AddressEntity.FromDomain(address);
             var command = new AddressSaveCommand(_dataSource, entity);
@@ -49,7 +50,7 @@ namespace Repository.Address
             }
         }
 
-        public Core.Domain.Address.Address Delete(Core.Domain.Address.Address address)
+        public AddressDomain Delete(AddressDomain address)
         {
             Delete(address.Id);
             return address;

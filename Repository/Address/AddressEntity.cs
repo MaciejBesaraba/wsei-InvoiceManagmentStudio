@@ -1,5 +1,6 @@
 using System.Data;
 using Core.Domain;
+using AddressDomain = Core.Domain.Address.Address;
 
 namespace Repository.Address
 {
@@ -34,7 +35,7 @@ namespace Repository.Address
         
         public AddressEntity() { }
 
-        public Core.Domain.Address.Address ToDomain()
+        public AddressDomain ToDomain()
         {
             return new Core.Domain.Address.Address(
                 new SimpleObjectIdentifier(Id ?? throw new DataException("Address Id is null")),
@@ -47,7 +48,7 @@ namespace Repository.Address
             );
         }
         
-        public static AddressEntity FromDomain(Core.Domain.Address.Address domain)
+        public static AddressEntity FromDomain(AddressDomain domain)
         {
             return new AddressEntity(
                 domain.Id.Value,

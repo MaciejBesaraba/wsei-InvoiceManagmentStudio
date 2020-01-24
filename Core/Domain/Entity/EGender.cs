@@ -1,15 +1,13 @@
 namespace Core.Domain.Entity
 {
-
     /// <summary>
     /// Logical value for a person sex
     /// </summary>
-    public enum ESex
+    public enum EGender
     {
         Unspecified,
         Male,
         Female,
         Other
     }
-
 }

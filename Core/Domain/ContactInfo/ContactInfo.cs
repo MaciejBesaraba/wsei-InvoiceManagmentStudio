@@ -10,7 +10,7 @@ namespace Core.Domain.ContactInfo
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string Title { get; set; }
-        public ESex Sex { get; set; }
+        public EGender Gender { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
 
@@ -20,7 +20,7 @@ namespace Core.Domain.ContactInfo
             string phone,
             string mobile,
             string title,
-            ESex sex,
+            EGender gender,
             string name,
             string surname
         )
@@ -30,7 +30,7 @@ namespace Core.Domain.ContactInfo
             Phone = phone;
             Mobile = mobile;
             Title = title;
-            Sex = sex;
+            Gender = gender;
             Name = name;
             Surname = surname;
         }
@@ -43,7 +43,7 @@ namespace Core.Domain.ContactInfo
                        $"phone={Phone.ToString()}, " +
                        $"mobile={Mobile.ToString()}, " +
                        $"title={Title.ToString()}, " +
-                       $"sex={Sex}, " +
+                       $"sex={Gender}, " +
                        $"name={Name.ToString()}, " +
                        $"surname={Surname.ToString()}, " +
                    ")";
@@ -64,7 +64,7 @@ namespace Core.Domain.ContactInfo
                    Equals(Phone, other.Phone) &&
                    Equals(Mobile, other.Mobile) &&
                    Equals(Title, other.Title) &&
-                   Equals(Sex, other.Sex) &&
+                   Equals(Gender, other.Gender) &&
                    Equals(Name, other.Name) &&
                    Equals(Surname, other.Surname);
         }
@@ -91,7 +91,7 @@ namespace Core.Domain.ContactInfo
                 hashCode = (hashCode * 397) ^ (Phone != null ? Phone.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Mobile != null ? Mobile.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Title != null ? Title.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Sex != null ? Sex.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Gender != null ? Gender.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Surname != null ? Surname.GetHashCode() : 0);
 

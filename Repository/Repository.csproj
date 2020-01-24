@@ -90,6 +90,7 @@
     <Compile Include="Address\Command\AddressFindByIdCommand.cs" />
     <Compile Include="Address\Command\AddressSaveCommand.cs" />
     <Compile Include="BillingInfo\BillingInfoEntity.cs" />
+    <Compile Include="BillingInfo\BillingInfoRowMapper.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoDeleteCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoFindAllCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoFindByIdCommand.cs" />

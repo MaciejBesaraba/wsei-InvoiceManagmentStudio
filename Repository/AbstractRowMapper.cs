@@ -3,15 +3,6 @@ using Npgsql;
 
 namespace Repository
 {
-    public interface IRowMapper<T>
-    {
-        List<T> FromResultSet(NpgsqlDataReader resultSet);
-
-        NpgsqlCommand ToRow(NpgsqlCommand command, T entity);
-
-        T FromRow(NpgsqlDataReader resultSet);
-    }
-    
     public abstract class AbstractRowMapper<T>
     {
         protected AbstractRowMapper() { }

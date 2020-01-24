@@ -91,6 +91,10 @@
     <Compile Include="Address\Command\AddressSaveCommand.cs" />
     <Compile Include="BillingInfo\BillingInfoEntity.cs" />
     <Compile Include="BillingInfo\BillingInfoRowMapper.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoDeleteCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoFindAllCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoFIndByIdCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoSaveCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoDeleteCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoFindAllCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoFindByIdCommand.cs" />

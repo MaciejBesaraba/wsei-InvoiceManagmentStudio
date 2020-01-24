@@ -31,5 +31,8 @@ CREATE TABLE billing_info (
     id SERIAL PRIMARY KEY,
     company_name VARCHAR(255) NOT NULL,
     zip_code VARCHAR(20) NOT NULL,
-    address_id BIGINT NOT NULL
+    address_id BIGINT NOT NULL 
+        REFERENCES contact_info(id)
+          ON UPDATE CASCADE
+          ON DELETE NO ACTION
 );

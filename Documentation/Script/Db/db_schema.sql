@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS billing_info;
 DROP TABLE IF EXISTS receiver;
 DROP TABLE IF EXISTS supplier;
 DROP TABLE IF EXISTS invoice_item;
+DROP TABLE IF EXISTS invoice_payment;
 
 
 CREATE TABLE address (
@@ -71,4 +72,12 @@ CREATE TABLE invoice_item (
     unit_type VARCHAR(30) NOT NULL,
     discount NUMERIC NOT NULL,
     quantity NUMERIC NOT NULL
-)
+);
+
+CREATE TABLE invoice_payment (
+    id BIGSERIAL PRIMARY KEY,
+    type VARCHAR(120) NOT NULL,
+    date DATE NOT NULL,
+    time_zone VARCHAR(255),
+    amount NUMERIC NOT NULL
+);

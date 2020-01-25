@@ -127,6 +127,7 @@
     <Compile Include="Item\InvoiceItemEntity.cs" />
     <Compile Include="Item\InvoiceItemRepository.cs" />
     <Compile Include="Item\InvoiceItemRowMapper.cs" />
+    <Compile Include="Payment\InvoicePaymentEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Invoice" />
-    <Folder Include="Payment" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

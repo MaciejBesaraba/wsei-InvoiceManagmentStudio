@@ -19,7 +19,7 @@ namespace Core.Domain.Invoice
         private readonly List<IInvoiceItemDefinition> _items;
         private readonly List<IInvoicePaymentDefinition> _payments;
         private readonly IEntitySupplierDefinition _supplier;
-        private readonly IEntityReceiverDefinition _reciever;
+        private readonly IEntityReceiverDefinition _receiver;
 
         public IObjectIdentifier<ulong> Id => _id;
         public DateTime IssueDate => _issueDate;
@@ -28,7 +28,7 @@ namespace Core.Domain.Invoice
         public List<IInvoiceItemDefinition> Items => _items;
         public List<IInvoicePaymentDefinition> Payments => _payments;
         public IEntitySupplierDefinition Supplier => _supplier;
-        public IEntityReceiverDefinition Receiver => _reciever;
+        public IEntityReceiverDefinition Receiver => _receiver;
 
 
         private InvoiceDto(
@@ -39,7 +39,7 @@ namespace Core.Domain.Invoice
             List<IInvoiceItemDefinition> items,
             List<IInvoicePaymentDefinition> payments,
             IEntitySupplierDefinition supplier,
-            IEntityReceiverDefinition reciever
+            IEntityReceiverDefinition receiver
         )
         {
             _id = id;
@@ -49,7 +49,7 @@ namespace Core.Domain.Invoice
             _items = items;
             _payments = payments;
             _supplier = supplier;
-            _reciever = reciever;
+            _receiver = receiver;
         }
 
         public string Serial => $"FV/{IssueDate.Year.ToString()}/{Id}";
@@ -137,7 +137,7 @@ namespace Core.Domain.Invoice
                 hashCode = (hashCode * 397) ^ (_items != null ? _items.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_payments != null ? _payments.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_supplier != null ? _supplier.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (_reciever != null ? _reciever.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_receiver != null ? _receiver.GetHashCode() : 0);
                 return hashCode;
             }
         }

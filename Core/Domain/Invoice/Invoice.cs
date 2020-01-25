@@ -16,10 +16,10 @@ namespace Core.Domain.Invoice
         public DateTime IssueDate { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime? RedemptionDate { get; set; }
-        public List<IInvoiceItemDefinition> Items { get; set; }
-        public List<IInvoicePaymentDefinition> Payments { get; set; }
-        public IEntitySupplierDefinition Supplier { get; set; }
-        public IEntityReceiverDefinition Receiver { get; set; }
+        public List<InvoiceItem> Items { get; set; }
+        public List<InvoicePayment> Payments { get; set; }
+        public EntitySupplier Supplier { get; set; }
+        public EntityReceiver Receiver { get; set; }
 
 
         public Invoice(
@@ -27,10 +27,10 @@ namespace Core.Domain.Invoice
             DateTime issueDate,
             DateTime dueDate,
             DateTime? redemptionDate,
-            List<IInvoiceItemDefinition> items,
-            List<IInvoicePaymentDefinition> payments,
-            IEntitySupplierDefinition supplier,
-            IEntityReceiverDefinition receiver
+            List<InvoiceItem> items,
+            List<InvoicePayment> payments,
+            EntitySupplier supplier,
+            EntityReceiver receiver
         )
         {
             Id = id;
@@ -143,10 +143,10 @@ namespace Core.Domain.Invoice
             DateTime issueDate,
             DateTime dueDate,
             DateTime redemptionDate,
-            List<IInvoiceItemDefinition> items,
-            List<IInvoicePaymentDefinition> payments,
-            IEntitySupplierDefinition supplier,
-            IEntityReceiverDefinition reciever
+            List<InvoiceItem> items,
+            List<InvoicePayment> payments,
+            EntitySupplier supplier,
+            EntityReceiver reciever
         )
         {
             return new Invoice(null, issueDate, dueDate, redemptionDate, items, payments, supplier, reciever);

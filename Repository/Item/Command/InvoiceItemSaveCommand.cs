@@ -7,10 +7,10 @@ namespace Repository.Item.Command
         private const string Sql = "INSERT INTO invoice_item(name, unit_price, unit_type, discount, quantity) VALUES (@id, @name, @unit_price, @unit_type, @discount, @quantity) RETURNING id;";
 
         private readonly InvoiceItemRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly InvoiceItemEntity _InvoiceItem;
         
-        public InvoiceItemSaveCommand(DataSourceConfig dataSource, InvoiceItemEntity InvoiceItem)
+        public InvoiceItemSaveCommand(IDataSourceConfig dataSource, InvoiceItemEntity InvoiceItem)
         {
             _rowMapper = new InvoiceItemRowMapper();
             _dataSource = dataSource;

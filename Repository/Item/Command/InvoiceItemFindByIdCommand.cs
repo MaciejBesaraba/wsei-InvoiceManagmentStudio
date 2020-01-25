@@ -8,10 +8,10 @@ namespace Repository.Item.Command
         private const string Sql = "SELECT * FROM invoice_item WHERE id = @Id;";
 
         private readonly InvoiceItemRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _queryParamId;
         
-        public InvoiceItemFindByIdCommand(DataSourceConfig dataSource, ulong id)
+        public InvoiceItemFindByIdCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new InvoiceItemRowMapper();
             _dataSource = dataSource;

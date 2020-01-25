@@ -7,10 +7,10 @@ namespace Repository.Item.Command
         private const string Sql = "DELETE FROM invoice_item WHERE id = @Id;";
         
         private readonly InvoiceItemRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _id;
         
-        public InvoiceItemDeleteCommand(DataSourceConfig dataSource, ulong id)
+        public InvoiceItemDeleteCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new InvoiceItemRowMapper();
             _dataSource = dataSource;

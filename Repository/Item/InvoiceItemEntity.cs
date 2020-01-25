@@ -14,7 +14,14 @@ namespace Repository.Item
         public decimal Discount { get; set; }
         public double Quantity { get; set; }
 
-        public InvoiceItemEntity(ulong? id, string name, decimal unitPrice, string unitType, decimal discount, double quantity)
+        public InvoiceItemEntity(
+            ulong? id,
+            string name,
+            decimal unitPrice,
+            string unitType,
+            decimal discount,
+            double quantity
+        )
         {
             Id = id;
             Name = name;

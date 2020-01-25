@@ -7,10 +7,10 @@ namespace Repository.BillingInfo.Command
         private const string Sql = "INSERT INTO billing_info(company_name, zip_code, address_id) VALUES (@company_name, @zip_code, @address_id) RETURNING id;";
 
         private readonly BillingInfoRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly BillingInfoEntity _billingInfo;
         
-        public BillingInfoSaveCommand(DataSourceConfig dataSource, BillingInfoEntity billingInfo)
+        public BillingInfoSaveCommand(IDataSourceConfig dataSource, BillingInfoEntity billingInfo)
         {
             _rowMapper = new BillingInfoRowMapper();
             _dataSource = dataSource;

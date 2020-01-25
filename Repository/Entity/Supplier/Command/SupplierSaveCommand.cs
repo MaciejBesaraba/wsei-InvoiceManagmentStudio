@@ -7,10 +7,10 @@ namespace Repository.Entity.Supplier.Command
         private const string Sql = "INSERT INTO supplier(billing_info_id, contact_info_id) VALUES (@billing_info_id, @contact_info_id) RETURNING id;";
 
         private readonly SupplierRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly SupplierEntity _supplier;
         
-        public SupplierSaveCommand(DataSourceConfig dataSource, SupplierEntity supplier)
+        public SupplierSaveCommand(IDataSourceConfig dataSource, SupplierEntity supplier)
         {
             _rowMapper = new SupplierRowMapper();
             _dataSource = dataSource;

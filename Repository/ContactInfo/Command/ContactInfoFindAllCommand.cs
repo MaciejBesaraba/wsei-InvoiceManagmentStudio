@@ -8,9 +8,9 @@ namespace Repository.ContactInfo.Command
         private const string Sql = "SELECT * FROM contact_info;";
         
         private readonly ContactInfoRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         
-        public ContactInfoFindAllCommand(DataSourceConfig dataSource)
+        public ContactInfoFindAllCommand(IDataSourceConfig dataSource)
         {
             _rowMapper = new ContactInfoRowMapper();
             _dataSource = dataSource;

@@ -10,9 +10,9 @@ namespace Repository.Address
 {
     public class AddressRepository : IAddressRepository
     {
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
 
-        public AddressRepository(DataSourceConfig dataSource)
+        public AddressRepository(IDataSourceConfig dataSource)
         {
             _dataSource = dataSource;
         }

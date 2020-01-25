@@ -7,10 +7,10 @@ namespace Repository.ContactInfo.Command
         private const string Sql = "DELETE FROM contact_info WHERE id = @Id;";
 
         private readonly ContactInfoRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _id;
 
-        public ContactInfoDeleteCommand(DataSourceConfig dataSource, ulong id)
+        public ContactInfoDeleteCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new ContactInfoRowMapper();
             _dataSource = dataSource;

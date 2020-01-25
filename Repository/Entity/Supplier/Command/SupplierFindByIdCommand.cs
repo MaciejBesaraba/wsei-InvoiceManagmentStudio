@@ -8,10 +8,10 @@ namespace Repository.Entity.Supplier.Command
         private const string Sql = "SELECT * FROM supplier WHERE id = @Id;";
 
         private readonly SupplierRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _queryParamId;
 
-        public SupplierFIndByIdCommand(DataSourceConfig dataSource, ulong id)
+        public SupplierFIndByIdCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new SupplierRowMapper();
             _dataSource = dataSource;

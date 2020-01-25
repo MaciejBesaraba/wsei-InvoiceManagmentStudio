@@ -7,10 +7,10 @@ namespace Repository.Entity.Supplier.Command
         private const string Sql = "DELETE FROM supplier WHERE id = @Id;";
         
         private readonly SupplierRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _id;
         
-        public SupplierDeleteCommand(DataSourceConfig dataSource, ulong id)
+        public SupplierDeleteCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new SupplierRowMapper();
             _dataSource = dataSource;

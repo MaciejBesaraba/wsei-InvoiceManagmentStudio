@@ -7,10 +7,10 @@ namespace Repository.Address.Command
         private const string Sql = "DELETE FROM address WHERE id = @Id;";
         
         private readonly AddressRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _id;
         
-        public AddressDeleteCommand(DataSourceConfig dataSource, ulong id)
+        public AddressDeleteCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new AddressRowMapper();
             _dataSource = dataSource;

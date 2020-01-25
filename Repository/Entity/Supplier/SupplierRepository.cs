@@ -12,12 +12,12 @@ namespace Repository.Entity.Supplier
 {
     public class SupplierRepository : IEntitySupplierRepository
     {
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly BillingInfoRepository _billingInfoRepository;
         private readonly ContactInfoRepository _contactInfoRepository;
         
         public SupplierRepository(
-            DataSourceConfig dataSource,
+            IDataSourceConfig dataSource,
             BillingInfoRepository billingInfoRepository,
             ContactInfoRepository contactInfoRepository
         )

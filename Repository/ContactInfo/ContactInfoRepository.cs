@@ -11,9 +11,9 @@ namespace Repository.ContactInfo
 {
     public class ContactInfoRepository : IContactInfoRepository
     {
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         
-        public ContactInfoRepository(DataSourceConfig dataSource)
+        public ContactInfoRepository(IDataSourceConfig dataSource)
         {
             _dataSource = dataSource;
         }

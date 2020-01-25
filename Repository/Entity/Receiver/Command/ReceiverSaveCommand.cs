@@ -7,10 +7,10 @@ namespace Repository.Entity.Receiver.Command
         private const string Sql = "INSERT INTO receiver(billing_info_id, contact_info_id) VALUES (@billing_info_id, @contact_info_id) RETURNING id;";
 
         private readonly ReceiverRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ReceiverEntity _receiver;
         
-        public ReceiverSaveCommand(DataSourceConfig dataSource, ReceiverEntity receiver)
+        public ReceiverSaveCommand(IDataSourceConfig dataSource, ReceiverEntity receiver)
         {
             _rowMapper = new ReceiverRowMapper();
             _dataSource = dataSource;

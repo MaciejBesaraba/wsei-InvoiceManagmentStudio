@@ -9,9 +9,9 @@ namespace Repository.Entity.Supplier.Command
         private const string Sql = "SELECT * FROM supplier;";
 
         private readonly AbstractRowMapper<SupplierEntity> _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
 
-        public SupplierFindAllCommand(DataSourceConfig dataSource)
+        public SupplierFindAllCommand(IDataSourceConfig dataSource)
         {
             _rowMapper = new SupplierRowMapper();
             _dataSource = dataSource;

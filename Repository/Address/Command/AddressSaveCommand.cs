@@ -8,10 +8,10 @@ namespace Repository.Address.Command
         private const string Sql = "INSERT INTO address(country, city, street, state, building_number, flat_number) VALUES (@country, @city, @street, @state, @building_number, @flat_number) RETURNING id;";
 
         private readonly AddressRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly AddressEntity _address;
         
-        public AddressSaveCommand(DataSourceConfig dataSource, AddressEntity address)
+        public AddressSaveCommand(IDataSourceConfig dataSource, AddressEntity address)
         {
             _rowMapper = new AddressRowMapper();
             _dataSource = dataSource;

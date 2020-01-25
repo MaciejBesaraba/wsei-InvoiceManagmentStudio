@@ -7,10 +7,10 @@ namespace Repository.BillingInfo.Command
         private const string Sql = "DELETE FROM billing_info WHERE id = @Id;";
         
         private readonly BillingInfoRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _id;
         
-        public BillingInfoDeleteCommand(DataSourceConfig dataSource, ulong id)
+        public BillingInfoDeleteCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new BillingInfoRowMapper();
             _dataSource = dataSource;

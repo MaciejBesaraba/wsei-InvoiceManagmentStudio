@@ -7,10 +7,10 @@ namespace Repository.ContactInfo.Command
         private const string Sql = "INSERT INTO contact_info(email, phone, mobile, title, gender, name, surname) VALUES (@email, @phone, @mobile, @title, @gender, @name, @surname) RETURNING id";
 
         private readonly ContactInfoRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private ContactInfoEntity _contactInfo;
         
-        public ContactInfoSaveCommand(DataSourceConfig dataSource, ContactInfoEntity contactInfo)
+        public ContactInfoSaveCommand(IDataSourceConfig dataSource, ContactInfoEntity contactInfo)
         {
             _rowMapper = new ContactInfoRowMapper();
             _dataSource = dataSource;

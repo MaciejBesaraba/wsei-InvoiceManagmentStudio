@@ -8,9 +8,9 @@ namespace Repository.Entity.Receiver.Command
         private const string Sql = "SELECT * FROM receiver;";
 
         private readonly AbstractRowMapper<ReceiverEntity> _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
 
-        public ReceiverFindAllCommand(DataSourceConfig dataSource)
+        public ReceiverFindAllCommand(IDataSourceConfig dataSource)
         {
             _rowMapper = new ReceiverRowMapper();
             _dataSource = dataSource;

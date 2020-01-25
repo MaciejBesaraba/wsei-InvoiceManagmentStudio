@@ -12,10 +12,10 @@ namespace Repository.BillingInfo
 {
     public class BillingInfoRepository : IBillingInfoRepository
     {
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly AddressRepository _addressRepository;
         
-        public BillingInfoRepository(DataSourceConfig dataSource, AddressRepository addressRepository)
+        public BillingInfoRepository(IDataSourceConfig dataSource, AddressRepository addressRepository)
         {
             _dataSource = dataSource;
             _addressRepository = addressRepository;

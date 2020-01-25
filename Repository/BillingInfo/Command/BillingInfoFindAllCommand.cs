@@ -8,9 +8,9 @@ namespace Repository.BillingInfo.Command
         private const string Sql = "SELECT * FROM billing_info;";
 
         private readonly AbstractRowMapper<BillingInfoEntity> _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
 
-        public BillingInfoFindAllCommand(DataSourceConfig dataSource)
+        public BillingInfoFindAllCommand(IDataSourceConfig dataSource)
         {
             _rowMapper = new BillingInfoRowMapper();
             _dataSource = dataSource;

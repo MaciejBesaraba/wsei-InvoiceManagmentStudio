@@ -8,10 +8,10 @@ namespace Repository.Entity.Receiver.Command
         private const string Sql = "SELECT * FROM receiver WHERE id = @Id;";
 
         private readonly ReceiverRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _queryParamId;
 
-        public ReceiverFIndByIdCommand(DataSourceConfig dataSource, ulong id)
+        public ReceiverFIndByIdCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new ReceiverRowMapper();
             _dataSource = dataSource;

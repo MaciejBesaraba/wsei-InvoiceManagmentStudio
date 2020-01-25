@@ -9,10 +9,10 @@ namespace Repository.Address.Command
         private const string Sql = "SELECT * FROM address WHERE id = @Id;";
 
         private readonly AddressRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
         private readonly ulong _queryParamId;
         
-        public AddressFindByIdCommand(DataSourceConfig dataSource, ulong id)
+        public AddressFindByIdCommand(IDataSourceConfig dataSource, ulong id)
         {
             _rowMapper = new AddressRowMapper();
             _dataSource = dataSource;

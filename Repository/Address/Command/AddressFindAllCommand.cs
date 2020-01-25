@@ -8,9 +8,9 @@ namespace Repository.Address.Command
         private const string Sql = "SELECT * FROM address;";
 
         private readonly AddressRowMapper _rowMapper;
-        private readonly DataSourceConfig _dataSource;
+        private readonly IDataSourceConfig _dataSource;
 
-        public AddressFindAllCommand(DataSourceConfig dataSource)
+        public AddressFindAllCommand(IDataSourceConfig dataSource)
         {
             _rowMapper = new AddressRowMapper();
             _dataSource = dataSource;

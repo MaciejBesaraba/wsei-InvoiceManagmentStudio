@@ -1,9 +1,7 @@
-using Core.Domain.Address;
-
 namespace Core.Application.Address
 {
 
-    public interface IAddressRepository: ICrudRepository<ulong, IAddressDefinition>
+    public interface IAddressRepository: ICrudRepository<ulong, Domain.Address.Address>
     {
         
     }

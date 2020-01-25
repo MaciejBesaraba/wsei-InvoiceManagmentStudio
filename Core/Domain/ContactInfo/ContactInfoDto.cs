@@ -10,7 +10,7 @@ namespace Core.Domain.ContactInfo
         private readonly string _phone;
         private readonly string _mobile;
         private readonly string _title;
-        private readonly ESex _sex;
+        private readonly EGender _gender;
         private readonly string _name;
         private readonly string _surname;
 
@@ -19,7 +19,7 @@ namespace Core.Domain.ContactInfo
         public string Phone => _phone;
         public string Mobile => _mobile;
         public string Title => _title;
-        public ESex Sex => _sex;
+        public EGender Gender => _gender;
         public string Name => _name;
         public string Surname => _surname;
 
@@ -30,7 +30,7 @@ namespace Core.Domain.ContactInfo
             string phone,
             string mobile,
             string title,
-            ESex sex,
+            EGender gender,
             string name,
             string surname
         )
@@ -40,7 +40,7 @@ namespace Core.Domain.ContactInfo
             _phone = phone;
             _mobile = mobile;
             _title = title;
-            _sex = sex;
+            _gender = gender;
             _name = name;
             _surname = surname;
         }
@@ -53,7 +53,7 @@ namespace Core.Domain.ContactInfo
                    $"phone={Phone}, " +
                    $"mobile={Mobile}, " +
                    $"title={Title}, " +
-                   $"sex={Sex}, " +
+                   $"sex={Gender}, " +
                    $"name={Name}, " +
                    $"surname={Surname}, " +
                    ")";
@@ -74,7 +74,7 @@ namespace Core.Domain.ContactInfo
                    string.Equals(_phone, other._phone) &&
                    string.Equals(_mobile, other._mobile) &&
                    string.Equals(_title, other._title) &&
-                   string.Equals(_sex, other._sex) &&
+                   string.Equals(_gender, other._gender) &&
                    string.Equals(_name, other._name) &&
                    string.Equals(_surname, other._surname);
         }
@@ -105,7 +105,7 @@ namespace Core.Domain.ContactInfo
                 hashCode = (hashCode * 397) ^ (_phone != null ? _phone.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_mobile != null ? _mobile.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_title != null ? _title.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (_sex != null ? _sex.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_gender != null ? _gender.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_name != null ? _name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (_surname != null ? _surname.GetHashCode() : 0);
                 return hashCode;
@@ -120,7 +120,7 @@ namespace Core.Domain.ContactInfo
                 contactInfo.Phone,
                 contactInfo.Mobile,
                 contactInfo.Title,
-                contactInfo.Sex,
+                contactInfo.Gender,
                 contactInfo.Name,
                 contactInfo.Surname
             );

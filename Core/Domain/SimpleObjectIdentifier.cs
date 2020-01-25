@@ -5,18 +5,18 @@ namespace Core.Domain
 
     public class SimpleObjectIdentifier : IObjectIdentifier<ulong>, IEquatable<SimpleObjectIdentifier>
     {
-        public ulong Id { get; }
+        public ulong Value { get; }
 
 
         public SimpleObjectIdentifier(ulong id)
         {
-            this.Id = id;
+            this.Value = id;
         }
 
 
         public override string ToString()
         {
-            return Id.ToString();
+            return Value.ToString();
         }
 
         public bool Equals(SimpleObjectIdentifier other)
@@ -30,7 +30,7 @@ namespace Core.Domain
             {
                 return true;
             }
-            return Id == other.Id;
+            return Value == other.Value;
         }
 
         public override bool Equals(object obj)
@@ -49,7 +49,7 @@ namespace Core.Domain
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return Value.GetHashCode();
         }
 
     }

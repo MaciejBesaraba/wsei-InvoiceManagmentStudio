@@ -41,7 +41,7 @@ namespace Core.Domain.ContactInfo
         /// <summary>
         /// Subject's sex
         /// </summary>
-        ESex Sex { get; }
+        EGender Gender { get; }
 
         // TODO define "subject"
         /// <summary>

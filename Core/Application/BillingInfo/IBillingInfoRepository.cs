@@ -1,9 +1,7 @@
-using Core.Domain.BillingInfo;
-
 namespace Core.Application.BillingInfo
 {
 
-    public interface IBillingInfoRepository: ICrudRepository<ulong, IBillingInfoDefinition>
+    public interface IBillingInfoRepository: ICrudRepository<ulong, Domain.BillingInfo.BillingInfo>
     {
         
     }

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Application.BillingInfo;
+using Core.Application.ContactInfo;
 using Core.Application.Entity.Supplier;
 using Core.Domain;
 using Core.Domain.Exception;
-using Repository.BillingInfo;
-using Repository.ContactInfo;
 using Repository.Entity.Supplier.Command;
 using SupplierDomain = Core.Domain.Entity.Supplier.EntitySupplier;
 
@@ -13,13 +13,13 @@ namespace Repository.Entity.Supplier
     public class SupplierRepository : IEntitySupplierRepository
     {
         private readonly IDataSourceConfig _dataSource;
-        private readonly BillingInfoRepository _billingInfoRepository;
-        private readonly ContactInfoRepository _contactInfoRepository;
+        private readonly IBillingInfoRepository _billingInfoRepository;
+        private readonly IContactInfoRepository _contactInfoRepository;
         
         public SupplierRepository(
             IDataSourceConfig dataSource,
-            BillingInfoRepository billingInfoRepository,
-            ContactInfoRepository contactInfoRepository
+            IBillingInfoRepository billingInfoRepository,
+            IContactInfoRepository contactInfoRepository
         )
         {
             _dataSource = dataSource;

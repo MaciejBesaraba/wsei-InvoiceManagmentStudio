@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Application.Address;
 using Core.Application.BillingInfo;
 using Core.Domain;
 using Core.Domain.Exception;
-using Repository.Address;
 using Repository.BillingInfo.Command;
 using BillingInfoDomain = Core.Domain.BillingInfo.BillingInfo;
 using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
@@ -13,9 +13,9 @@ namespace Repository.BillingInfo
     public class BillingInfoRepository : IBillingInfoRepository
     {
         private readonly IDataSourceConfig _dataSource;
-        private readonly AddressRepository _addressRepository;
+        private readonly IAddressRepository _addressRepository;
         
-        public BillingInfoRepository(IDataSourceConfig dataSource, AddressRepository addressRepository)
+        public BillingInfoRepository(IDataSourceConfig dataSource, IAddressRepository addressRepository)
         {
             _dataSource = dataSource;
             _addressRepository = addressRepository;

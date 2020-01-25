@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core.Application.BillingInfo;
+using Core.Application.ContactInfo;
 using Core.Application.Entity.Receiver;
 using Core.Domain;
 using ReceiverDomain = Core.Domain.Entity.Receiver.EntityReceiver;
 using Core.Domain.Exception;
-using Repository.BillingInfo;
-using Repository.ContactInfo;
 using Repository.Entity.Receiver.Command;
 
 namespace Repository.Entity.Receiver
@@ -13,13 +13,13 @@ namespace Repository.Entity.Receiver
     public class ReceiverRepository : IEntityReceiverRepository
     {
         private readonly IDataSourceConfig _dataSource;
-        private readonly BillingInfoRepository _billingInfoRepository;
-        private readonly ContactInfoRepository _contactInfoRepository;
+        private readonly IBillingInfoRepository _billingInfoRepository;
+        private readonly IContactInfoRepository _contactInfoRepository;
 
         public ReceiverRepository(
             IDataSourceConfig dataSource,
-            BillingInfoRepository billingInfoRepository,
-            ContactInfoRepository contactInfoRepository
+            IBillingInfoRepository billingInfoRepository,
+            IContactInfoRepository contactInfoRepository
         )
         {
             _dataSource = dataSource;

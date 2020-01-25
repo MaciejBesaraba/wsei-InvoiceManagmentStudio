@@ -94,7 +94,7 @@
     <Compile Include="BillingInfo\BillingInfoRowMapper.cs" />
     <Compile Include="BillingInfo\Command\BillingInfoDeleteCommand.cs" />
     <Compile Include="BillingInfo\Command\BillingInfoFindAllCommand.cs" />
-    <Compile Include="BillingInfo\Command\BillingInfoFIndByIdCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoFindByIdCommand.cs" />
     <Compile Include="BillingInfo\Command\BillingInfoSaveCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoDeleteCommand.cs" />
     <Compile Include="ContactInfo\Command\ContactInfoFindAllCommand.cs" />
@@ -120,6 +120,10 @@
     <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
+    <Compile Include="Invoice\Command\InvoiceDeleteCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindByIdCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceSaveCommand.cs" />
     <Compile Include="Invoice\InvoiceEntity.cs" />
     <Compile Include="Invoice\InvoiceRowMapper.cs" />
     <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />

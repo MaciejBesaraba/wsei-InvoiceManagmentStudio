@@ -84,7 +84,7 @@ CREATE TABLE invoice_payment (
 );
 
 CREATE TABLE invoice (
-    id BIGSERIAL PRIMARY KEy,
+    id BIGSERIAL PRIMARY KEY,
     issue_date DATE NOT NULL,
     due_date DATE NOT NULL,
     redemption_date DATE,

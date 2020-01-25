@@ -70,22 +70,22 @@ namespace Core.Domain.Invoice
         /// <summary>
         /// List of invoice services and items shipped to receiver
         /// </summary>
-        List<IInvoiceItemDefinition> Items { get; }
+        List<InvoiceItem> Items { get; }
 
         /// <summary>
         /// List of payments to supplier issuing invoice
         /// </summary>
-        List<IInvoicePaymentDefinition> Payments { get; }
+        List<InvoicePayment> Payments { get; }
 
         /// <summary>
         /// Entity issuing invoice
         /// </summary>
-        IEntitySupplierDefinition Supplier { get; }
+        EntitySupplier Supplier { get; }
 
         /// <summary>
         /// Entity receiving invoice
         /// </summary>
-        IEntityReceiverDefinition Receiver { get; }
+        EntityReceiver Receiver { get; }
     }
 
 }

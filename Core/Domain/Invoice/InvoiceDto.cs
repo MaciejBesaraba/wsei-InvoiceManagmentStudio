@@ -10,25 +10,25 @@ using Core.Domain.Payment;
 
 namespace Core.Domain.Invoice
 {
-    public class InvoiceDto : IInvoiceDefinition, IEquatable<InvoiceDto>
+    public class InvoiceDto : IEquatable<InvoiceDto>
     {
         private readonly IObjectIdentifier<ulong> _id;
         private readonly DateTime _issueDate;
         private readonly DateTime _dueDate;
         private readonly DateTime? _redemptionDate;
-        private readonly List<IInvoiceItemDefinition> _items;
-        private readonly List<IInvoicePaymentDefinition> _payments;
-        private readonly IEntitySupplierDefinition _supplier;
-        private readonly IEntityReceiverDefinition _receiver;
+        private readonly List<InvoiceItemDto> _items;
+        private readonly List<InvoicePaymentDto> _payments;
+        private readonly EntitySupplierDto _supplier;
+        private readonly EntityReceiverDto _receiver;
 
         public IObjectIdentifier<ulong> Id => _id;
         public DateTime IssueDate => _issueDate;
         public DateTime DueDate => _dueDate;
         public DateTime? RedemptionDate => _redemptionDate;
-        public List<IInvoiceItemDefinition> Items => _items;
-        public List<IInvoicePaymentDefinition> Payments => _payments;
-        public IEntitySupplierDefinition Supplier => _supplier;
-        public IEntityReceiverDefinition Receiver => _receiver;
+        public List<InvoiceItemDto> Items => _items;
+        public List<InvoicePaymentDto> Payments => _payments;
+        public EntitySupplierDto Supplier => _supplier;
+        public EntityReceiverDto Receiver => _receiver;
 
 
         private InvoiceDto(
@@ -36,10 +36,10 @@ namespace Core.Domain.Invoice
             DateTime issueDate,
             DateTime dueDate,
             DateTime? redemptionDate,
-            List<IInvoiceItemDefinition> items,
-            List<IInvoicePaymentDefinition> payments,
-            IEntitySupplierDefinition supplier,
-            IEntityReceiverDefinition receiver
+            List<InvoiceItemDto> items,
+            List<InvoicePaymentDto> payments,
+            EntitySupplierDto supplier,
+            EntityReceiverDto receiver
         )
         {
             _id = id;
@@ -149,10 +149,10 @@ namespace Core.Domain.Invoice
                 invoice.IssueDate,
                 invoice.DueDate,
                 invoice.RedemptionDate,
-                invoice.Items,
-                invoice.Payments,
-                invoice.Supplier,
-                invoice.Receiver
+                invoice.Items.Select(InvoiceItemDto.FromDomain).ToList(),
+                invoice.Payments.Select(InvoicePaymentDto.FromDomain).ToList(),
+                EntitySupplierDto.FromDomain(invoice.Supplier),
+                EntityReceiverDto.FromDomain(invoice.Receiver)
             );
         }
     }

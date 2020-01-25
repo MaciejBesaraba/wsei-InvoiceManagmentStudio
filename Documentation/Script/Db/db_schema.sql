@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS receiver;
 DROP TABLE IF EXISTS supplier;
 DROP TABLE IF EXISTS invoice_item;
 DROP TABLE IF EXISTS invoice_payment;
+DROP TABLE IF EXISTS invoice;
 
 
 CREATE TABLE address (
@@ -80,4 +81,41 @@ CREATE TABLE invoice_payment (
     date DATE NOT NULL,
     time_zone VARCHAR(255),
     amount NUMERIC NOT NULL
+);
+
+CREATE TABLE invoice (
+    id BIGSERIAL PRIMARY KEY,
+    issue_date DATE NOT NULL,
+    due_date DATE NOT NULL,
+    redemption_date DATE,
+    supplier_id BIGINT NOT NULL
+        REFERENCES supplier(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION,
+    receiver_id BIGINT NOT NULL
+        REFERENCES receiver(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION
+);
+
+CREATE TABLE invoice_items (
+    invoice_id BIGINT NOT NULL
+        REFERENCES invoice(id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    item_id BIGINT NOT NULL
+        REFERENCES invoice_item(id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE invoice_payments (
+    invoice_id BIGINT NOT NULL
+        REFERENCES invoice(id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    item_id BIGINT NOT NULL
+        REFERENCES invoice_payment(id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 );

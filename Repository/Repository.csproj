@@ -128,6 +128,7 @@
     <Compile Include="Item\InvoiceItemRepository.cs" />
     <Compile Include="Item\InvoiceItemRowMapper.cs" />
     <Compile Include="Payment\InvoicePaymentEntity.cs" />
+    <Compile Include="Payment\InvoicePaymentRowMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

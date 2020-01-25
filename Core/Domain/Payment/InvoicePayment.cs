@@ -85,5 +85,14 @@ namespace Core.Domain.Payment
                 return hashCode;
             }
         }
+        public static InvoicePayment Create(
+            EPaymentType type,
+            DateTime date,
+            TimeZoneInfo timeZone,
+            decimal amount
+        )
+        {
+            return new InvoicePayment(null, type, date, timeZone, amount);
+        }
     }
 }

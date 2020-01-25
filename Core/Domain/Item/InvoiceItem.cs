@@ -101,6 +101,17 @@ namespace Core.Domain.Item
             }
         }
 
+        public static InvoiceItem Create(
+            string name,
+            decimal unitPrice,
+            EUnitType unitType,
+            decimal discount,
+            double quantity
+        )
+        {
+            return new InvoiceItem(null, name, unitPrice, unitType, discount, quantity);
+        }
+
     }
 
 }

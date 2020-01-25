@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS contact_info;
 DROP TABLE IF EXISTS billing_info;
 DROP TABLE IF EXISTS receiver;
 DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS invoice_item;
 
 
 CREATE TABLE address (
@@ -62,3 +63,12 @@ CREATE TABLE supplier (
             ON UPDATE CASCADE
             ON DELETE NO ACTION
 );
+
+CREATE TABLE invoice_item (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    unit_price NUMERIC NOT NULL,
+    unit_type VARCHAR(30) NOT NULL,
+    discount NUMERIC NOT NULL,
+    quantity NUMERIC NOT NULL
+)

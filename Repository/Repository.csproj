@@ -120,6 +120,13 @@
     <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
+    <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemFindAllCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemFindByIdCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemSaveCommand.cs" />
+    <Compile Include="Item\InvoiceItemEntity.cs" />
+    <Compile Include="Item\InvoiceItemRepository.cs" />
+    <Compile Include="Item\InvoiceItemRowMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Invoice" />
-    <Folder Include="Item" />
     <Folder Include="Payment" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

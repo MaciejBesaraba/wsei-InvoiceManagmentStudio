@@ -7,14 +7,14 @@ namespace Repository.Entity
     public abstract class EntityEntity
     {
         public ulong? Id { get; set; }
-        public ulong BillingInfo { get; set; }
-        public ulong ContactInfo { get; set; }
+        public ulong BillingInfoRef { get; set; }
+        public ulong ContactInfoRef { get; set; }
 
-        protected EntityEntity(ulong? id, ulong billingInfo, ulong contactInfo)
+        protected EntityEntity(ulong? id, ulong billingInfoRef, ulong contactInfoRef)
         {
             Id = id;
-            BillingInfo = billingInfo;
-            ContactInfo = contactInfo;
+            BillingInfoRef = billingInfoRef;
+            ContactInfoRef = contactInfoRef;
         }
     }
 }

@@ -4,6 +4,8 @@ CREATE DATABASE ivms;
 DROP TABLE IF EXISTS address;
 DROP TABLE IF EXISTS contact_info;
 DROP TABLE IF EXISTS billing_info;
+DROP TABLE IF EXISTS receiver;
+DROP TABLE IF EXISTS supplier;
 
 
 CREATE TABLE address (
@@ -35,4 +37,28 @@ CREATE TABLE billing_info (
         REFERENCES contact_info(id)
           ON UPDATE CASCADE
           ON DELETE NO ACTION
+);
+
+CREATE TABLE receiver (
+    id SERIAL PRIMARY KEY,
+    billing_info_id BIGINT NOT NULL
+        REFERENCES billing_info(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION,
+    contact_info_id BIGINT NOT NULL
+        REFERENCES contact_info(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION
+);
+
+CREATE TABLE supplier (
+    id SERIAL PRIMARY KEY,
+    billing_info_id BIGINT NOT NULL
+        REFERENCES billing_info(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION,
+    contact_info_id BIGINT NOT NULL
+        REFERENCES contact_info(id)
+            ON UPDATE CASCADE
+            ON DELETE NO ACTION
 );

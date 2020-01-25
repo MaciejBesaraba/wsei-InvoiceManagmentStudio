@@ -38,15 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InMemory\AddressInMemoryRepository.cs" />
-    <Compile Include="InMemory\BillingInfoInMemoryRepository.cs" />
-    <Compile Include="InMemory\ContactInfoInMemoryRepository.cs" />
-    <Compile Include="InMemory\EntityInMemoryRepository.cs" />
-    <Compile Include="InMemory\EntityReceiverInMemoryRepository.cs" />
-    <Compile Include="InMemory\EntitySupplierInMemoryRepository.cs" />
-    <Compile Include="InMemory\InvoiceInMemoryRepository.cs" />
-    <Compile Include="InMemory\InvoiceItemInMemoryRepository.cs" />
-    <Compile Include="InMemory\InvoicePaymentInMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +45,9 @@
       <Project>{5f43281a-145e-44ff-8f65-0446a2773696}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InMemory" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

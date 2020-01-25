@@ -1,6 +1,7 @@
 using System;
 using Core.Domain.Address;
 
+
 namespace Core.Domain.BillingInfo
 {
     public class BillingInfo : IBillingInfoDefinition, IEquatable<BillingInfo>
@@ -28,9 +29,9 @@ namespace Core.Domain.BillingInfo
         {
             return "BillingInfo(" +
                        $"id={Id}, " +
-                       $"companyName={CompanyName.ToString()}, " +
-                       $"zipCode={ZipCode.ToString()}, " +
-                       $"billingAddress={BillingAddress}, " +
+                       $"companyName={CompanyName}, " +
+                       $"zipCode={ZipCode}, " +
+                       $"billingAddress={BillingAddress}" +
                    ")";
         }
 
@@ -74,6 +75,14 @@ namespace Core.Domain.BillingInfo
 
                 return hashCode;
             }
+        }
+        public static BillingInfo Create(
+            string companyName,
+            string zipCode,
+            IAddressDefinition billingAddress
+        )
+        {
+            return new BillingInfo(null, companyName, zipCode, billingAddress);
         }
     }
 }

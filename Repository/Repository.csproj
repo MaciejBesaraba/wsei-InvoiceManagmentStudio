@@ -122,9 +122,12 @@
     <Compile Include="DataSourceConfig.cs" />
     <Compile Include="Invoice\Command\InvoiceDeleteCommand.cs" />
     <Compile Include="Invoice\Command\InvoiceFindAllCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllItemsCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllPaymentsCommand.cs" />
     <Compile Include="Invoice\Command\InvoiceFindByIdCommand.cs" />
     <Compile Include="Invoice\Command\InvoiceSaveCommand.cs" />
     <Compile Include="Invoice\InvoiceEntity.cs" />
+    <Compile Include="Invoice\InvoiceRepository.cs" />
     <Compile Include="Invoice\InvoiceRowMapper.cs" />
     <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />
     <Compile Include="Item\Command\InvoiceItemFindAllCommand.cs" />

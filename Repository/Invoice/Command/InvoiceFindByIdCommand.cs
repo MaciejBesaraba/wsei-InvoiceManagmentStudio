@@ -1,6 +1,5 @@
 using System.Linq;
 using Npgsql;
-using Repository.Invoice;
 
 namespace Repository.Invoice.Command
 {

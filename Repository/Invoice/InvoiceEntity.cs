@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Core.Domain;
 using Core.Domain.Entity.Receiver;
 using Core.Domain.Entity.Supplier;
@@ -77,6 +78,20 @@ namespace Repository.Invoice
                 payments,
                 supplier,
                 receiver
+            );
+        }
+
+        public static InvoiceEntity FromDomain(InvoiceDomain domain)
+        {
+            return new InvoiceEntity(
+                domain.Id.Value,
+                domain.IssueDate,
+                domain.DueDate,
+                domain.RedemptionDate,
+                domain.Items.Select(item => item.Id.Value).ToList(),
+                domain.Payments.Select(payment => payment.Id.Value).ToList(),
+                domain.Supplier.Id.Value,
+                domain.Receiver.Id.Value
             );
         }
     }

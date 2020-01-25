@@ -127,6 +127,10 @@
     <Compile Include="Item\InvoiceItemEntity.cs" />
     <Compile Include="Item\InvoiceItemRepository.cs" />
     <Compile Include="Item\InvoiceItemRowMapper.cs" />
+    <Compile Include="Payment\Command\PaymentItemDeleteCommand.cs" />
+    <Compile Include="Payment\Command\PaymentItemFindAllCommand.cs" />
+    <Compile Include="Payment\Command\PaymentItemFindByIdCommand.cs" />
+    <Compile Include="Payment\Command\PaymentItemSaveCommand.cs" />
     <Compile Include="Payment\InvoicePaymentEntity.cs" />
     <Compile Include="Payment\InvoicePaymentRowMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -19,7 +19,6 @@ namespace Core.Domain.Item
         private readonly EUnitType _unitType;
         private readonly decimal _discount;
         private readonly double _quantity;
-        //add backing fields
 
         public IObjectIdentifier<ulong> Id => _id;
         public string Name => _name;
@@ -27,7 +26,6 @@ namespace Core.Domain.Item
         public EUnitType UnitType => _unitType;
         public decimal Discount => _discount;
         public double Quantity => _quantity;
-        //add properties with get only
 
         private InvoiceItemDto(
             IObjectIdentifier<ulong> id,
@@ -36,7 +34,6 @@ namespace Core.Domain.Item
             EUnitType unitType,
             decimal discount,
             double quantity
-            //add private constructor
         )
         {
             _id = id;
@@ -126,7 +123,5 @@ namespace Core.Domain.Item
                 invoiceItem.Quantity
             );
         }
-        //add fromdomain method
     }
-
 }

@@ -11,14 +11,12 @@ namespace Core.Domain.Payment
         private readonly DateTime _date;
         private readonly TimeZoneInfo _timeZone;
         private readonly decimal _amount;
-        //add backing fields
 
         public IObjectIdentifier<ulong> Id => _id;
         public EPaymentType Type => _type;
         public DateTime Date => _date;
         public TimeZoneInfo TimeZone => _timeZone;
         public decimal Amount => _amount;
-        //add properties with get only
 
         private InvoicePaymentDto(
             IObjectIdentifier<ulong> id,
@@ -26,7 +24,6 @@ namespace Core.Domain.Payment
             DateTime date,
             TimeZoneInfo timeZone,
             decimal amount
-            //add private constructor
         )
         {
             _id = id;
@@ -102,6 +99,5 @@ namespace Core.Domain.Payment
                 invoicePayment.Amount
             );
         }
-        //add fromdomain method
     }
 }

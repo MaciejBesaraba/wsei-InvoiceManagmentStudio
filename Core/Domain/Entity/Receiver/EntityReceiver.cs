@@ -11,5 +11,14 @@ namespace Core.Domain.Entity.Receiver
             IBillingInfoDefinition billingInfo,
             IContactInfoDefinition contactInfo
         ) : base(id, billingInfo, contactInfo) { }
+        
+        public static EntityReceiver Create(
+            IBillingInfoDefinition billingInfo,
+            IContactInfoDefinition contactInfo
+        )
+        {
+            return new EntityReceiver(null, billingInfo, contactInfo);
+        }
     }
 }
+

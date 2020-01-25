@@ -11,5 +11,13 @@ namespace Core.Domain.Entity.Supplier
             IBillingInfoDefinition billingInfo,
             IContactInfoDefinition contactInfo
         ) : base(id, billingInfo, contactInfo) { }
+        
+        public static EntitySupplier Create(
+            IBillingInfoDefinition billingInfo,
+            IContactInfoDefinition contactInfo
+        )
+        {
+            return new EntitySupplier(null, billingInfo, contactInfo);
+        }
     }
 }

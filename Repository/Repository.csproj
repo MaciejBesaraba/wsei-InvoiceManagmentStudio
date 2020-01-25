@@ -103,6 +103,21 @@
     <Compile Include="ContactInfo\ContactInfoEntity.cs" />
     <Compile Include="ContactInfo\ContactInfoRepository.cs" />
     <Compile Include="ContactInfo\ContactInfoRowMapper.cs" />
+    <Compile Include="Entity\EntityEntity.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverDeleteCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverFindAllCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverFindByIdCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverSaveCommand.cs" />
+    <Compile Include="Entity\Receiver\ReceiverEntity.cs" />
+    <Compile Include="Entity\Receiver\ReceiverRepository.cs" />
+    <Compile Include="Entity\Receiver\ReceiverRowMapper.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierDeleteCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierFindAllCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierFindByIdCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierSaveCommand.cs" />
+    <Compile Include="Entity\Supplier\SupplierEntity.cs" />
+    <Compile Include="Entity\Supplier\SupplierRepository.cs" />
+    <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,8 +132,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entity\Receiver" />
-    <Folder Include="Entity\Supplier" />
     <Folder Include="Invoice" />
     <Folder Include="Item" />
     <Folder Include="Payment" />

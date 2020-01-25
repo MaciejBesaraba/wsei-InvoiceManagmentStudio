@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using Core.Application.Entity.Supplier;
 using Core.Domain;
-using Core.Domain.Entity.Supplier;
+using Core.Domain.Exception;
 using Repository.BillingInfo;
 using Repository.ContactInfo;
+using Repository.Entity.Supplier.Command;
+using SupplierDomain = Core.Domain.Entity.Supplier.EntitySupplier;
 
 namespace Repository.Entity.Supplier
 {
@@ -25,29 +28,50 @@ namespace Repository.Entity.Supplier
         }
         
         
-        public List<EntitySupplier> FindAll()
+        public List<SupplierDomain> FindAll()
         {
-            throw new System.NotImplementedException();
+            var command = new SupplierFindAllCommand(_dataSource);
+            return command.Execute().Select(Aggreagate).ToList();
         }
 
-        public EntitySupplier FindById(IObjectIdentifier<ulong> id)
+        public SupplierDomain FindById(IObjectIdentifier<ulong> id)
         {
-            throw new System.NotImplementedException();
+            var command = new SupplierFIndByIdCommand(_dataSource, id.Value);
+            var entity = command.Execute() ?? throw new ResourceNotFoundException(typeof(SupplierEntity), id);
+
+            return Aggreagate(entity);
         }
 
-        public EntitySupplier Save(EntitySupplier entity)
+        public SupplierDomain Save(SupplierDomain domain)
         {
-            throw new System.NotImplementedException();
+            var entity = SupplierEntity.FromDomain(domain);
+            var command = new SupplierSaveCommand(_dataSource, entity);
+            entity = command.Execute();
+
+            return Aggreagate(entity);
         }
 
         public void Delete(IObjectIdentifier<ulong> id)
         {
-            throw new System.NotImplementedException();
+            var command = new SupplierDeleteCommand(_dataSource, id.Value);
+            if (!command.Execute())
+            {
+                throw new ResourceNotFoundException(typeof(SupplierEntity), id);
+            }
         }
 
-        public EntitySupplier Delete(EntitySupplier entity)
+        public SupplierDomain Delete(SupplierDomain domain)
         {
-            throw new System.NotImplementedException();
+            Delete(domain.Id);
+            return domain;
+        }
+
+        private SupplierDomain Aggreagate(SupplierEntity entity)
+        {
+            return entity.ToDomain(
+                _billingInfoRepository.FindById(new SimpleObjectIdentifier(entity.BillingInfoRef)),
+                _contactInfoRepository.FindById(new SimpleObjectIdentifier(entity.ContactInfoRef))
+            );
         }
     }
 }

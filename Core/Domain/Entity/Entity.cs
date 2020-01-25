@@ -75,13 +75,5 @@ namespace Core.Domain.Entity
                 return hashCode;
             }
         }
-        public static Entity Create(
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
-        )
-        {
-            return new Entity(null, billingInfo, contactInfo);
-        }
     }
-
 }

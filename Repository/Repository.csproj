@@ -121,6 +121,7 @@
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
     <Compile Include="Invoice\InvoiceEntity.cs" />
+    <Compile Include="Invoice\InvoiceRowMapper.cs" />
     <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />
     <Compile Include="Item\Command\InvoiceItemFindAllCommand.cs" />
     <Compile Include="Item\Command\InvoiceItemFindByIdCommand.cs" />

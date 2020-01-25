@@ -20,6 +20,25 @@ namespace Repository.Invoice
         public List<ulong> PaymentsRefs { get; set; }
         public ulong SupplierRef { get; set; }
         public ulong ReceiverRef { get; set; }
+        
+        public InvoiceEntity(
+            ulong? id,
+            DateTime issueDate,
+            DateTime dueDate,
+            DateTime? redemptionDate,
+            ulong supplierRef,
+            ulong receiverRef
+        )
+        {
+            Id = id;
+            IssueDate = issueDate;
+            DueDate = dueDate;
+            RedemptionDate = redemptionDate;
+            ItemsRefs = new List<ulong>();
+            PaymentsRefs = new List<ulong>();
+            SupplierRef = supplierRef;
+            ReceiverRef = receiverRef;
+        }
 
         public InvoiceEntity(
             ulong? id,

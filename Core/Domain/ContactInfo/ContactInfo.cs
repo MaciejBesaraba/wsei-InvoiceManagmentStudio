@@ -103,12 +103,12 @@ namespace Core.Domain.ContactInfo
             string phone,
             string mobile,
             string title,
-            ESex sex,
+            EGender gender,
             string name,
             string surname
         )
         {
-            return new ContactInfo(null, email, phone, mobile, title, sex, name, surname);
+            return new ContactInfo(null, email, phone, mobile, title, gender, name, surname);
         }
     }
 }

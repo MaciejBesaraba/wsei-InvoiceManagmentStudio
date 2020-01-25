@@ -16,8 +16,8 @@ namespace Repository.Entity.Supplier
         
         public override NpgsqlCommand ToRow(NpgsqlCommand command, SupplierEntity entity)
         {
-            command.Parameters.AddWithValue(BillingInfoColumnName, entity.BillingInfo);
-            command.Parameters.AddWithValue(ContactInfoColumnName, entity.ContactInfo);
+            command.Parameters.AddWithValue(BillingInfoColumnName, entity.BillingInfoRef);
+            command.Parameters.AddWithValue(ContactInfoColumnName, entity.ContactInfoRef);
             command.Prepare();
 
             return command;

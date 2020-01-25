@@ -8,7 +8,7 @@ namespace Repository.Entity.Supplier
 {
     public class SupplierEntity : EntityEntity
     {
-        public SupplierEntity(ulong? id, ulong billingInfo, ulong contactInfo) : base(id, billingInfo, contactInfo) { }
+        public SupplierEntity(ulong? id, ulong billingInfoRef, ulong contactInfoRef) : base(id, billingInfoRef, contactInfoRef) { }
 
         public SupplierDomain ToDomain(BillingInfoDomain billingInfo, ContactInfoDomain contactInfo)
         {

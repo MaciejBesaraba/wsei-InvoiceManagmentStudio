@@ -120,6 +120,7 @@
     <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
+    <Compile Include="Invoice\InvoiceEntity.cs" />
     <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />
     <Compile Include="Item\Command\InvoiceItemFindAllCommand.cs" />
     <Compile Include="Item\Command\InvoiceItemFindByIdCommand.cs" />
@@ -144,9 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Invoice" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

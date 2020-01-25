@@ -98,5 +98,17 @@ namespace Core.Domain.ContactInfo
                 return hashCode;
             }
         }
+        public static ContactInfo Create(
+            string email,
+            string phone,
+            string mobile,
+            string title,
+            ESex sex,
+            string name,
+            string surname
+        )
+        {
+            return new ContactInfo(null, email, phone, mobile, title, sex, name, surname);
+        }
     }
 }

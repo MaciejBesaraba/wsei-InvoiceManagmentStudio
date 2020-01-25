@@ -120,6 +120,7 @@
     <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
     <Compile Include="IDataSourceConfig.cs" />
     <Compile Include="DataSourceConfig.cs" />
+    <Compile Include="Item\InvoiceItemEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Invoice" />
-    <Folder Include="Item" />
     <Folder Include="Payment" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

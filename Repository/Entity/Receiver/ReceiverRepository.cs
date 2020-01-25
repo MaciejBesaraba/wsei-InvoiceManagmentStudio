@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using Core.Application.Entity.Receiver;
 using Core.Domain;
-using Core.Domain.Entity.Receiver;
+using ReceiverDomain = Core.Domain.Entity.Receiver.EntityReceiver;
+using Core.Domain.Exception;
 using Repository.BillingInfo;
 using Repository.ContactInfo;
+using Repository.Entity.Receiver.Command;
 
 namespace Repository.Entity.Receiver
 {
@@ -12,7 +15,7 @@ namespace Repository.Entity.Receiver
         private readonly DataSourceConfig _dataSource;
         private readonly BillingInfoRepository _billingInfoRepository;
         private readonly ContactInfoRepository _contactInfoRepository;
-        
+
         public ReceiverRepository(
             DataSourceConfig dataSource,
             BillingInfoRepository billingInfoRepository,
@@ -23,31 +26,52 @@ namespace Repository.Entity.Receiver
             _billingInfoRepository = billingInfoRepository;
             _contactInfoRepository = contactInfoRepository;
         }
-        
-        
-        public List<EntityReceiver> FindAll()
+
+
+        public List<ReceiverDomain> FindAll()
         {
-            throw new System.NotImplementedException();
+            var command = new ReceiverFindAllCommand(_dataSource);
+            return command.Execute().Select(Aggreagate).ToList();
         }
 
-        public EntityReceiver FindById(IObjectIdentifier<ulong> id)
+        public ReceiverDomain FindById(IObjectIdentifier<ulong> id)
         {
-            throw new System.NotImplementedException();
+            var command = new ReceiverFIndByIdCommand(_dataSource, id.Value);
+            var entity = command.Execute() ?? throw new ResourceNotFoundException(typeof(ReceiverEntity), id);
+
+            return Aggreagate(entity);
         }
 
-        public EntityReceiver Save(EntityReceiver entity)
+        public ReceiverDomain Save(ReceiverDomain domain)
         {
-            throw new System.NotImplementedException();
+            var entity = ReceiverEntity.FromDomain(domain);
+            var command = new ReceiverSaveCommand(_dataSource, entity);
+            entity = command.Execute();
+
+            return Aggreagate(entity);
         }
 
         public void Delete(IObjectIdentifier<ulong> id)
         {
-            throw new System.NotImplementedException();
+            var command = new ReceiverDeleteCommand(_dataSource, id.Value);
+            if (!command.Execute())
+            {
+                throw new ResourceNotFoundException(typeof(ReceiverEntity), id);
+            }
         }
 
-        public EntityReceiver Delete(EntityReceiver entity)
+        public ReceiverDomain Delete(ReceiverDomain domain)
         {
-            throw new System.NotImplementedException();
+            Delete(domain.Id);
+            return domain;
+        }
+
+        private ReceiverDomain Aggreagate(ReceiverEntity entity)
+        {
+            return entity.ToDomain(
+                _billingInfoRepository.FindById(new SimpleObjectIdentifier(entity.BillingInfoRef)),
+                _contactInfoRepository.FindById(new SimpleObjectIdentifier(entity.ContactInfoRef))
+            );
         }
     }
 }

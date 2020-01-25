@@ -16,8 +16,8 @@ namespace Repository.Entity.Receiver
         
         public override NpgsqlCommand ToRow(NpgsqlCommand command, ReceiverEntity entity)
         {
-            command.Parameters.AddWithValue(BillingInfoColumnName, entity.BillingInfo);
-            command.Parameters.AddWithValue(ContactInfoColumnName, entity.ContactInfo);
+            command.Parameters.AddWithValue(BillingInfoColumnName, entity.BillingInfoRef);
+            command.Parameters.AddWithValue(ContactInfoColumnName, entity.ContactInfoRef);
             command.Prepare();
 
             return command;

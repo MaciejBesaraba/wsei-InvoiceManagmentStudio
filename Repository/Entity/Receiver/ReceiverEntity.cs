@@ -8,7 +8,7 @@ namespace Repository.Entity.Receiver
 {
     public class ReceiverEntity : EntityEntity
     {
-        public ReceiverEntity(ulong? id, ulong billingInfo, ulong contactInfo) : base(id, billingInfo, contactInfo) { }
+        public ReceiverEntity(ulong? id, ulong billingInfoRef, ulong contactInfoRef) : base(id, billingInfoRef, contactInfoRef) { }
 
         public ReceiverDomain ToDomain(BillingInfoDomain billingInfo, ContactInfoDomain contactInfo)
         {

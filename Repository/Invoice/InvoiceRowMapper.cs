@@ -26,7 +26,7 @@ namespace Repository.Invoice
             command.Parameters.AddWithValue(DueDateColumnName, entity.DueDate);
             command.Parameters.AddWithValue(RedemptionDateColumnName, entity.RedemptionDate);
             command.Parameters.AddWithValue(SupplierRefColumnName, entity.SupplierRef);
-            command.Parameters.AddWithValue(SupplierRefColumnName, entity.ReceiverRef);
+            command.Parameters.AddWithValue(ReceiverRefColumnName, entity.ReceiverRef);
             command.Prepare();
 
             return command;

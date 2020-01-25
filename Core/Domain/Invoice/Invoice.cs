@@ -139,6 +139,19 @@ namespace Core.Domain.Invoice
             }
         }
 
+        public static Invoice Create(
+            DateTime issueDate,
+            DateTime dueDate,
+            DateTime redemptionDate,
+            List<IInvoiceItemDefinition> items,
+            List<IInvoicePaymentDefinition> payments,
+            IEntitySupplierDefinition supplier,
+            IEntityReceiverDefinition reciever
+        )
+        {
+            return new Invoice(null, issueDate, dueDate, redemptionDate, items, payments, supplier, reciever);
+        }
+
     }
 
 }

@@ -38,7 +38,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvoiceService.cs" />
+    <Compile Include="Address\AddressService.cs" />
+    <Compile Include="BillingInfo\BillingInfoService.cs" />
+    <Compile Include="ContactInfo\ContactInfoService.cs" />
+    <Compile Include="Entity\Receiver\SupplierService.cs" />
+    <Compile Include="Entity\Supplier\ReceiverService.cs" />
+    <Compile Include="Invoice\InvoiceService.cs" />
+    <Compile Include="Item\InvoiceItemService.cs" />
+    <Compile Include="Payment\InvoicePaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

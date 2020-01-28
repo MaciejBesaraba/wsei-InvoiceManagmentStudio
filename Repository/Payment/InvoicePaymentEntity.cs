@@ -46,7 +46,7 @@ namespace Repository.Payment
                 domain.Id.Value,
                 domain.Type.ToString(),
                 domain.Date,
-                domain.TimeZone.ToString(),
+                domain.TimeZone.BaseUtcOffset.ToString(),
                 domain.Amount
             );
         }

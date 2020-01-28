@@ -38,6 +38,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address\AddressService.cs" />
+    <Compile Include="BillingInfo\BillingInfoService.cs" />
+    <Compile Include="ContactInfo\ContactInfoService.cs" />
+    <Compile Include="Entity\Receiver\SupplierService.cs" />
+    <Compile Include="Entity\Supplier\ReceiverService.cs" />
+    <Compile Include="Invoice\InvoiceService.cs" />
+    <Compile Include="Item\InvoiceItemService.cs" />
+    <Compile Include="Payment\InvoicePaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -45,9 +53,6 @@
       <Project>{5f43281a-145e-44ff-8f65-0446a2773696}</Project>
       <Name>Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Crud" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,10 +8,17 @@ namespace Core.Domain.Entity.Supplier
     {
         private EntitySupplierDto(
             IObjectIdentifier<ulong> id,
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDto billingInfo,
+            ContactInfoDto contactInfo
         ) : base(id, billingInfo, contactInfo) { }
 
-        public static EntitySupplierDto FromDomain(Entity entity) => new EntitySupplierDto(entity.Id, entity.BillingInfo, entity.ContactInfo);
+        public static EntitySupplierDto FromDomain(EntitySupplier supplier)
+        {
+            return new EntitySupplierDto(
+                supplier.Id,
+                BillingInfoDto.FromDomain(supplier.BillingInfo),
+                ContactInfoDto.FromDomain(supplier.ContactInfo)
+            );
+        }
     }
 }

@@ -31,12 +31,14 @@ namespace Core.Application
         /// <returns>Single entity after creation process</returns>
         T Create(T entity);
 
-        /// <summary>
-        /// Process update of data for entity specified
-        /// </summary>
-        /// <param name="entity">Entity instance to update</param>
-        /// <returns></returns>
-        T Update(T entity);
+        /**
+         * /// <summary>
+         * /// Process update of data for entity specified
+         * /// </summary>
+         * /// <param name="entity">Entity instance to update</param>
+         * /// <returns></returns>
+         * T Update(T entity);
+         */
 
         /// <summary>
         /// Process deletion of entity object

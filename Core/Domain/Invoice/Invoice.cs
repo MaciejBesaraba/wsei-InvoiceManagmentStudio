@@ -142,14 +142,13 @@ namespace Core.Domain.Invoice
         public static Invoice Create(
             DateTime issueDate,
             DateTime dueDate,
-            DateTime redemptionDate,
             List<InvoiceItem> items,
             List<InvoicePayment> payments,
             EntitySupplier supplier,
             EntityReceiver reciever
         )
         {
-            return new Invoice(null, issueDate, dueDate, redemptionDate, items, payments, supplier, reciever);
+            return new Invoice(null, issueDate, dueDate, null, items, payments, supplier, reciever);
         }
 
     }

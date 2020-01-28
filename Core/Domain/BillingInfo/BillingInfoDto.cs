@@ -4,23 +4,23 @@ using Core.Domain.Address;
 
 namespace Core.Domain.BillingInfo
 {
-    public class BillingInfoDto : IBillingInfoDefinition, IEquatable<BillingInfoDto>
+    public class BillingInfoDto : IEquatable<BillingInfoDto>
     {
         private readonly IObjectIdentifier<ulong> _id;
         private readonly string _companyName;
         private readonly string _zipCode;
-        private readonly IAddressDefinition _billingAddress;
+        private readonly AddressDto _billingAddress;
 
         public IObjectIdentifier<ulong> Id => _id;
         public string CompanyName => _companyName;
         public string ZipCode => _zipCode;
-        public IAddressDefinition BillingAddress => _billingAddress;
+        public AddressDto BillingAddress => _billingAddress;
 
         private BillingInfoDto(
             IObjectIdentifier<ulong> id,
             string companyName,
             string zipCode,
-            IAddressDefinition billingAddress
+            AddressDto billingAddress
         )
         {
             _id = id;
@@ -84,7 +84,12 @@ namespace Core.Domain.BillingInfo
 
         public static BillingInfoDto FromDomain(BillingInfo billingInfo)
         {
-            return new BillingInfoDto(billingInfo.Id, billingInfo.CompanyName, billingInfo.ZipCode, billingInfo.BillingAddress);
+            return new BillingInfoDto(
+                billingInfo.Id,
+                billingInfo.CompanyName,
+                billingInfo.ZipCode,
+                AddressDto.FromDomain(billingInfo.BillingAddress)
+            );
         }
     }
 

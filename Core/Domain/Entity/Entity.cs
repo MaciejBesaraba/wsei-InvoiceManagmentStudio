@@ -1,6 +1,8 @@
 using System;
 using Core.Domain.BillingInfo;
 using Core.Domain.ContactInfo;
+using BillingInfoDomain = Core.Domain.BillingInfo.BillingInfo;
+using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
 
 namespace Core.Domain.Entity
 {
@@ -9,15 +11,15 @@ namespace Core.Domain.Entity
     {
         public IObjectIdentifier<ulong> Id { get; }
 
-        public IBillingInfoDefinition BillingInfo { get; }
+        public BillingInfoDomain BillingInfo { get; }
 
-        public IContactInfoDefinition ContactInfo { get; }
+        public ContactInfoDomain ContactInfo { get; }
 
 
         protected Entity(
             IObjectIdentifier<ulong> id,
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDomain billingInfo,
+            ContactInfoDomain contactInfo
         )
         {
             Id = id;

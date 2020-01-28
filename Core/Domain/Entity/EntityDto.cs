@@ -5,20 +5,20 @@ using Core.Domain.ContactInfo;
 
 namespace Core.Domain.Entity
 {
-    public abstract class EntityDto : IEntityDefinition, IEquatable<EntityDto>
+    public abstract class EntityDto : IEquatable<EntityDto>
     {
         private readonly IObjectIdentifier<ulong> _id;
-        private readonly IBillingInfoDefinition _billingInfo;
-        private readonly IContactInfoDefinition _contactInfo;
+        private readonly BillingInfoDto _billingInfo;
+        private readonly ContactInfoDto _contactInfo;
 
         public IObjectIdentifier<ulong> Id => _id;
-        public IBillingInfoDefinition BillingInfo => _billingInfo;
-        public IContactInfoDefinition ContactInfo => _contactInfo;
+        public BillingInfoDto BillingInfo => _billingInfo;
+        public ContactInfoDto ContactInfo => _contactInfo;
 
         protected EntityDto(
             IObjectIdentifier<ulong> id,
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDto billingInfo,
+            ContactInfoDto contactInfo
         )
         {
             _id = id;

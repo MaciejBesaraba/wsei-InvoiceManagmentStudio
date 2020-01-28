@@ -1,6 +1,5 @@
-using Core.Domain.BillingInfo;
-using Core.Domain.ContactInfo;
-
+using BillingInfoDomain = Core.Domain.BillingInfo.BillingInfo;
+using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
 
 namespace Core.Domain.Entity.Receiver
 {
@@ -8,13 +7,13 @@ namespace Core.Domain.Entity.Receiver
     {
         public EntityReceiver(
             IObjectIdentifier<ulong> id,
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDomain billingInfo,
+            ContactInfoDomain contactInfo
         ) : base(id, billingInfo, contactInfo) { }
         
         public static EntityReceiver Create(
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDomain billingInfo,
+            ContactInfoDomain contactInfo
         )
         {
             return new EntityReceiver(null, billingInfo, contactInfo);

@@ -1,5 +1,5 @@
-using Core.Domain.BillingInfo;
-using Core.Domain.ContactInfo;
+using BillingInfoDomain = Core.Domain.BillingInfo.BillingInfo;
+using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
 
 namespace Core.Domain.Entity
 {
@@ -16,12 +16,12 @@ namespace Core.Domain.Entity
         /// <summary>
         /// Data set necessary to issue an invoice
         /// </summary>
-        IBillingInfoDefinition BillingInfo { get; }
+        BillingInfoDomain BillingInfo { get; }
 
         /// <summary>
         /// Contact information provided by entity
         /// </summary>
-        IContactInfoDefinition ContactInfo { get; }
+        ContactInfoDomain ContactInfo { get; }
     }
 
 }

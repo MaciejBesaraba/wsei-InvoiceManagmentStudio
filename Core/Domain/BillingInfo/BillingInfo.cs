@@ -1,6 +1,5 @@
 using System;
-using Core.Domain.Address;
-
+using AddressDomain = Core.Domain.Address.Address;
 
 namespace Core.Domain.BillingInfo
 {
@@ -9,14 +8,14 @@ namespace Core.Domain.BillingInfo
         public IObjectIdentifier<ulong> Id { get; }
         public string CompanyName { get; }
         public string ZipCode { get; }
-        public IAddressDefinition BillingAddress { get; }
+        public AddressDomain BillingAddress { get; }
 
 
         public BillingInfo(
             IObjectIdentifier<ulong> id,
             string companyName,
             string zipCode,
-            IAddressDefinition billingAddress
+            AddressDomain billingAddress
         )
         {
             Id = id;
@@ -79,7 +78,7 @@ namespace Core.Domain.BillingInfo
         public static BillingInfo Create(
             string companyName,
             string zipCode,
-            IAddressDefinition billingAddress
+            AddressDomain billingAddress
         )
         {
             return new BillingInfo(null, companyName, zipCode, billingAddress);

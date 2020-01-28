@@ -1,6 +1,5 @@
-using Core.Domain.BillingInfo;
-using Core.Domain.ContactInfo;
-
+using BillingInfoDomain = Core.Domain.BillingInfo.BillingInfo;
+using ContactInfoDomain = Core.Domain.ContactInfo.ContactInfo;
 
 namespace Core.Domain.Entity.Supplier
 {
@@ -8,13 +7,13 @@ namespace Core.Domain.Entity.Supplier
     {
         public EntitySupplier(
             IObjectIdentifier<ulong> id,
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDomain billingInfo,
+            ContactInfoDomain contactInfo
         ) : base(id, billingInfo, contactInfo) { }
         
         public static EntitySupplier Create(
-            IBillingInfoDefinition billingInfo,
-            IContactInfoDefinition contactInfo
+            BillingInfoDomain billingInfo,
+            ContactInfoDomain contactInfo
         )
         {
             return new EntitySupplier(null, billingInfo, contactInfo);

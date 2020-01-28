@@ -1,4 +1,4 @@
-using Core.Domain.Address;
+using AddressDomain = Core.Domain.Address.Address;
 
 namespace Core.Domain.BillingInfo
 {
@@ -26,7 +26,7 @@ namespace Core.Domain.BillingInfo
         /// <summary>
         /// Official address related to billing data
         /// </summary>
-        IAddressDefinition BillingAddress { get; }
+        AddressDomain BillingAddress { get; }
     }
 
 }

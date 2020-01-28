@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Application.Entity.Receiver;
+using Core.Application.Entity.Supplier;
 using Core.Application.Invoice;
 using Core.Domain;
 using Core.Domain.Invoice;
@@ -12,7 +14,6 @@ namespace Service
     public class InvoiceService : IInvoiceService
     {
         private readonly IInvoiceRepository _repository;
-
         public InvoiceService(IInvoiceRepository repository)
         {
             _repository = repository;
@@ -44,8 +45,8 @@ namespace Service
                     paymentDto.Amount)
                 ).ToList(),
                 // TODO exist ? get : create
-                null,
-                null
+                _supplierService.Create(invoiceDto.Supplier).ToDomain(),
+                _receiverRepository.Create(invoiceDto.Receiver).ToDomain()
             )));
         }
 

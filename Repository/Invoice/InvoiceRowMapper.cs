@@ -1,3 +1,4 @@
+using System;
 using Npgsql;
 
 namespace Repository.Invoice
@@ -34,11 +35,17 @@ namespace Repository.Invoice
 
         protected override InvoiceEntity FromRow(NpgsqlDataReader resultSet)
         {
+            DateTime? redemptionDate = null;
+            if (!resultSet.IsDBNull(RedemptionDateColumn))
+            {
+                redemptionDate = resultSet.GetDateTime(RedemptionDateColumn);
+            }
+
             return new InvoiceEntity(
-                (ulong)resultSet.GetInt64(IdColumn),
+                (ulong) resultSet.GetInt64(IdColumn),
                 resultSet.GetDateTime(DueDateColumn),
                 resultSet.GetDateTime(IssueDateColumn),
-                resultSet.GetDateTime(RedemptionDateColumn),
+                redemptionDate,
                 (ulong)resultSet.GetInt64(SupplierRefColumn),
                 (ulong)resultSet.GetInt64(ReceiverRefColumn)
             );

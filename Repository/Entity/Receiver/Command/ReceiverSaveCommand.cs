@@ -21,8 +21,8 @@ namespace Repository.Entity.Receiver.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             command = _rowMapper.ToRow(command, _receiver);
-
             _receiver.Id = (ulong) command.ExecuteScalar();
+            _dataSource.CloseDbConnection();
 
             return _receiver;
         }

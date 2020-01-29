@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using Core.Application.Entity.Receiver;
 using Core.Application.Entity.Supplier;
@@ -86,10 +88,10 @@ namespace Repository.Invoice
 
         private void Populate(InvoiceEntity entity)
         {
-            var itemCommand = new InvoiceFindAllItemsCommand(_dataSource);
+            var itemCommand = new InvoiceFindAllItemsCommand(_dataSource, entity.Id ?? throw new DataException("InvoiceEntity Id is null"));
             entity.ItemsRefs = itemCommand.Execute();
 
-            var paymentsCommand = new InvoiceFindAllPaymentsCommand(_dataSource);
+            var paymentsCommand = new InvoiceFindAllPaymentsCommand(_dataSource, entity.Id ?? throw new DataException("InvoiceEntity Id is null"));
             entity.PaymentsRefs = paymentsCommand.Execute();
         }
 

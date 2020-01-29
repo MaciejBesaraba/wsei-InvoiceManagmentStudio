@@ -76,7 +76,7 @@ INSERT INTO invoice_items (invoice_id, item_id)
             (4, 9);
 
 
-INSERT INTO invoice_payments (invoice_id, item_id)
+INSERT INTO invoice_payments (invoice_id, payment_id)
      VALUES (1, 1),
             (1, 2),
 
@@ -86,5 +86,3 @@ INSERT INTO invoice_payments (invoice_id, item_id)
             -- Invoice 4
             -- no payments
             ;
-
-

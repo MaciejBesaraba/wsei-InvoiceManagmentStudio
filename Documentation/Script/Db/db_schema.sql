@@ -1,4 +1,4 @@
-CREATE DATABASE ivms;
+--CREATE DATABASE ivms;
 
 
 DROP TABLE IF EXISTS address;
@@ -114,7 +114,7 @@ CREATE TABLE invoice_payments (
         REFERENCES invoice(id)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
-    item_id BIGINT NOT NULL
+    payment_id BIGINT NOT NULL
         REFERENCES invoice_payment(id)
             ON DELETE CASCADE
             ON UPDATE CASCADE

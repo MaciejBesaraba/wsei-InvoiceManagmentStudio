@@ -21,9 +21,9 @@ namespace Repository.BillingInfo.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             command = _rowMapper.ToRow(command, _billingInfo);
-
             _billingInfo.Id = (ulong) command.ExecuteScalar();
-
+            _dataSource.CloseDbConnection();
+            
             return _billingInfo;
         }
     }

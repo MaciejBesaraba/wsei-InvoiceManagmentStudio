@@ -21,12 +21,14 @@ namespace Repository.Invoice.Command
         public InvoiceEntity Execute()
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
-            command.Parameters.AddWithValue("Id", _queryParamId);
+            command.Parameters.AddWithValue("Id", (long)_queryParamId);
             command.Prepare();
             
             var resultSet = command.ExecuteReader();
+            var result = _rowMapper.FromResultSet(resultSet).FirstOrDefault();
+            _dataSource.CloseDbConnection();
 
-            return _rowMapper.FromResultSet(resultSet).FirstOrDefault();
+            return result;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Npgsql;
 
 namespace Repository.Address
@@ -24,15 +25,24 @@ namespace Repository.Address
 
         protected override AddressEntity FromRow(NpgsqlDataReader resultSet)
         {
-            return new AddressEntity(
-                (ulong) resultSet.GetInt64(IdColumn),
-                resultSet.GetString(CountryColumn),
-                resultSet.GetString(CityColumn),
-                resultSet.GetString(StreetColumn),
-                resultSet.GetString(StateColumn),
-                resultSet.GetString(BuildingNumber),
-                resultSet.GetString(FlatNumberColumn)
-            );
+            Console.WriteLine(resultSet);
+            var id = (ulong) resultSet.GetInt64(IdColumn);
+            var country = resultSet.GetString(CountryColumn);
+            var city = resultSet.GetString(CityColumn);
+            var street = resultSet.GetString(StreetColumn);
+            var state = resultSet.GetString(StateColumn);
+            var building = resultSet.GetString(BuildingNumber);
+            var flat = resultSet.GetString(FlatNumberColumn);
+            return new AddressEntity(id, country, city, street, state, building, flat);
+//            return new AddressEntity(
+//                (ulong) resultSet.GetInt64(IdColumn),
+//                resultSet.GetString(CountryColumn),
+//                resultSet.GetString(CityColumn),
+//                resultSet.GetString(StreetColumn),
+//                resultSet.GetString(StateColumn),
+//                resultSet.GetString(BuildingNumber),
+//                resultSet.GetString(FlatNumberColumn)
+//            );
         }
 
         public override NpgsqlCommand ToRow(NpgsqlCommand command, AddressEntity address)

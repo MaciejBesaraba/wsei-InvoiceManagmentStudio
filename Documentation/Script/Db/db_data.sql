@@ -1,7 +1,7 @@
 INSERT INTO address (id, country, state, city, street, building_number, flat_number)
-     VALUES (1, 'Polska', 'Małopolska', 'Kraków',   'Grodzka',    56,  6),
-            (2, 'Polska', 'Mazowiekie', 'Warszawa', 'Wiejska',    17, 18),
-            (3, 'Polska', 'Śląskie',    'Gliwice',  'Zwycięstwa',  7,  7);
+     VALUES (1, 'Polska', 'Małopolska', 'Kraków',   'Grodzka',    '56',  '6'),
+            (2, 'Polska', 'Mazowiekie', 'Warszawa', 'Wiejska',    '17', '18'),
+            (3, 'Polska', 'Śląskie',    'Gliwice',  'Zwycięstwa',  '7',  '7');
 
 
 INSERT INTO contact_info (id, email, phone, mobile, title, gender, name, surname)

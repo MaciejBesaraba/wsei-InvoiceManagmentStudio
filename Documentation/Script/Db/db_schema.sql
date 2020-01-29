@@ -17,8 +17,8 @@ CREATE TABLE address (
   city VARCHAR(255) NOT NULL,
   street VARCHAR(255) NOT NULL,
   state VARCHAR(255) NOT NULL,
-  building_number INTEGER NOT NULL,
-  flat_number INTEGER
+  building_number VARCHAR(60) NOT NULL,
+  flat_number VARCHAR(60)
 );
 
 CREATE TABLE contact_info (

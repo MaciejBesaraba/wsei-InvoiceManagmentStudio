@@ -21,8 +21,8 @@ namespace Repository.Entity.Supplier.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             command = _rowMapper.ToRow(command, _supplier);
-
             _supplier.Id = (ulong) command.ExecuteScalar();
+            _dataSource.CloseDbConnection();
 
             return _supplier;
         }

@@ -21,8 +21,11 @@ namespace Repository.Item.Command
         public bool Execute()
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
-            command.Parameters.AddWithValue("Id", _id);
-            return command.ExecuteNonQuery() > 0;
+            command.Parameters.AddWithValue("Id", (long)_id);
+            var result = command.ExecuteNonQuery() > 0;
+            _dataSource.CloseDbConnection();
+
+            return result;
         }
     }
 }

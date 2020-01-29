@@ -23,6 +23,7 @@ namespace Repository.Payment.Command
             command = _rowMapper.ToRow(command, _InvoicePayment);
 
             _InvoicePayment.Id = (ulong) command.ExecuteScalar();
+            _dataSource.CloseDbConnection();
 
             return _InvoicePayment;
         }

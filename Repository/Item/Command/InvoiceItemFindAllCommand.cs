@@ -20,8 +20,10 @@ namespace Repository.Item.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             var resultSet = command.ExecuteReader();
+            var result = _rowMapper.FromResultSet(resultSet);
+            _dataSource.CloseDbConnection();
 
-            return _rowMapper.FromResultSet(resultSet);
+            return result;
         }
     }
 }

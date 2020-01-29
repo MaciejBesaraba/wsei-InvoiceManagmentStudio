@@ -21,8 +21,8 @@ namespace Repository.Item.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             command = _rowMapper.ToRow(command, _InvoiceItem);
-
             _InvoiceItem.Id = (ulong) command.ExecuteScalar();
+            _dataSource.CloseDbConnection();
 
             return _InvoiceItem;
         }

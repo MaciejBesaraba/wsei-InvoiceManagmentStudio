@@ -22,8 +22,8 @@ namespace Repository.Address.Command
         {
             var command = new NpgsqlCommand(Sql, _dataSource.DbConnection);
             command = _rowMapper.ToRow(command, _address);
-
             _address.Id = (ulong) command.ExecuteScalar();
+            _dataSource.CloseDbConnection();
 
             return _address;
         }

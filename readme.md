@@ -1,5 +1,12 @@
 # InvoiceManagementStudio
 
+## Compilation prerequisite
+
+Requires PostgreSQL database:
+
+- [dll](./Documentation/Script/Db/db_schema.sql),
+- [test data](./Documentation/Script/Db/db_data.sql)
+
 ## Background
 
 `IVMS` was created as a term project at university `Wyższa Szkoła Ekonomii i Informatyki w Krakowie` as a subject of `Programming in C#` labs.
@@ -52,13 +59,13 @@ It is a layer responsible for management and communication with `PostgreSQL` dat
     - `FromDomain` creates `entity` representing a database row from a domain object.
     - `ToDomain` a method that supplied with object relations can create a domain obejct out of entity.
 
-1. `RowMapper`
+2. `RowMapper`
    - Classes responsible of translating database query result set into an `entity` object.
 
-1. `Command`
+3. `Command`
    - Responsible of managing and executing query upon a database connection.
 
-1. `Repository`
+4. `Repository`
    - Layer communication access point. Provides methods on resources and delegates tasks to database.
 
 ![ERD database diagram](./Documentation/Diagrams/ERD/ERD.png)

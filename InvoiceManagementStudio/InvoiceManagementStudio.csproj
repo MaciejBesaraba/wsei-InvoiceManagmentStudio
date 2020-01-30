@@ -50,6 +50,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\EntityInfoModel.cs" />
+    <Compile Include="ViewModel\InvoiceHeaderModel.cs" />
+    <Compile Include="ViewModel\SupplierHeaderModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,9 +67,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModel\EntityInfoModel.cs" />
-    <Compile Include="ViewModel\InvoiceHeaderModel.cs" />
-    <Compile Include="ViewModel\SupplierHeaderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

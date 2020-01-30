@@ -64,6 +64,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\EntityInfoModel.cs" />
+    <Compile Include="ViewModel\InvoiceHeaderModel.cs" />
+    <Compile Include="ViewModel\SupplierHeaderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -84,12 +87,19 @@
     <Content Include="..\.gitignore">
       <Link>.gitignore</Link>
     </Content>
-    <Content Include="..\changelog.md">
-      <Link>changelog.md</Link>
-    </Content>
-    <Content Include="..\readme.md">
-      <Link>readme.md</Link>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{5f43281a-145e-44ff-8f65-0446a2773696}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{beb6b08c-f421-4fd3-86e9-2844f5c09681}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

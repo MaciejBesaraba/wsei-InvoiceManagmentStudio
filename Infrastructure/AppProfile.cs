@@ -22,5 +22,23 @@ namespace Infrastructure
             Password = DefaultPassword;
             Database = DefaultDatabase;
         }
+        
+        public AppProfile(string dataSource, string username, string password, string database)
+        {
+            DataSource = dataSource;
+            Username = username;
+            Password = password;
+            Database = database;
+        }
+
+        public static AppProfile FromConfig()
+        {
+            return new AppProfile(
+                ConfigurationSettings.AppSettings.Get("datasource"),
+                ConfigurationSettings.AppSettings.Get("username"),
+                ConfigurationSettings.AppSettings.Get("password"),
+                ConfigurationSettings.AppSettings.Get("database")
+            );
+        }
     }
 }

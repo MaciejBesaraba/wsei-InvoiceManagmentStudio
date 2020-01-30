@@ -7,6 +7,8 @@ Requires PostgreSQL database:
 - [dll](./Documentation/Script/Db/db_schema.sql),
 - [test data](./Documentation/Script/Db/db_data.sql)
 
+Database configuration in file: [App.config](./InvoiceManagementStudio/App.config).
+
 ## Background
 
 `IVMS` was created as a term project at university `Wyższa Szkoła Ekonomii i Informatyki w Krakowie` as a subject of `Programming in C#` labs.

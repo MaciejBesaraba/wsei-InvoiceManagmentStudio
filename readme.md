@@ -61,6 +61,8 @@ It is a layer responsible for management and communication with `PostgreSQL` dat
 1. `Repository`
    - Layer communication access point. Provides methods on resources and delegates tasks to database.
 
+![ERD database diagram](./Documentation/Diagrams/ERD/ERD.png)
+
 ### `Service`
 
 It is a layer concluding application business logic. Gives access to resources, and delegates user action results to specific logic engines.

@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <!-- <TextBlock Text="{Binding Path=Title}" VerticalAlignment="Center" HorizontalAlignment="Center"/> -->
+        <!-- <TextBlock Text="{Binding Path=Issued}" VerticalAlignment="Center" HorizontalAlignment="Center"/> -->
+        <!-- <TextBlock Text="{Binding Path=Due}" VerticalAlignment="Center" HorizontalAlignment="Center"/> -->
+        <!-- <TextBlock Text="{Binding Path=Redemption}" VerticalAlignment="Center" HorizontalAlignment="Center"/> -->
+        <ListView Margin="8" Height="400" Width="650" ItemsSource="{Binding Path=Invoices}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Serial" Width="Auto" DisplayMemberBinding="{Binding Title}" ></GridViewColumn>
+                    <GridViewColumn Header="Issued" Width="Auto" DisplayMemberBinding="{Binding Issued}" ></GridViewColumn>
+                    <GridViewColumn Header="Due" Width="Auto" DisplayMemberBinding="{Binding Due}" ></GridViewColumn>
+                    <GridViewColumn Header="Redemption" Width="Auto" DisplayMemberBinding="{Binding Redemption}" ></GridViewColumn>
+                    <!-- <GridViewColumn DisplayMemberBinding="{Binding Name}"  -->
+                    <!--                 Header="Name" Width="100"/> -->
+                    <!-- <GridViewColumn DisplayMemberBinding="{Binding Price}"  -->
+                    <!--                 Header="Price" Width="100"/> -->
+                    <!-- <GridViewColumn DisplayMemberBinding="{Binding Author}"  -->
+                    <!--                 Header="Author" Width="100"/> -->
+                    <!-- <GridViewColumn DisplayMemberBinding="{Binding Catalog}"  -->
+                    <!--                 Header="Catalog" Width="100"/> -->
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

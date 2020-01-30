@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F43281A-145E-44FF-8F65-0446A2773696}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Address\IAddressRepository.cs" />
+    <Compile Include="Application\Address\IAddressService.cs" />
+    <Compile Include="Application\BillingInfo\IBillingInfoRepository.cs" />
+    <Compile Include="Application\BillingInfo\IBillingInfoService.cs" />
+    <Compile Include="Application\ContactInfo\IContactInfoReporitory.cs" />
+    <Compile Include="Application\ContactInfo\IContactInfoService.cs" />
+    <Compile Include="Application\Entity\IEntityRepository.cs" />
+    <Compile Include="Application\Entity\IEntityService.cs" />
+    <Compile Include="Application\Entity\Receiver\IEntityReceiverRepository.cs" />
+    <Compile Include="Application\Entity\Receiver\IEntityReceiverService.cs" />
+    <Compile Include="Application\Entity\Supplier\IEntitySupplierRepository.cs" />
+    <Compile Include="Application\Entity\Supplier\IEntitySupplierService.cs" />
+    <Compile Include="Application\ICrudRepository.cs" />
+    <Compile Include="Application\ICrudService.cs" />
+    <Compile Include="Application\Invoice\IInvoiceRepository.cs" />
+    <Compile Include="Application\Invoice\IInvoiceService.cs" />
+    <Compile Include="Application\Item\IInvoiceItemRepository.cs" />
+    <Compile Include="Application\Item\IInvoiceItemService.cs" />
+    <Compile Include="Application\Payment\IInvoicePaymentRepository.cs" />
+    <Compile Include="Application\Payment\IInvoicePaymentService.cs" />
+    <Compile Include="Domain\Address\Address.cs" />
+    <Compile Include="Domain\Address\AddressDto.cs" />
+    <Compile Include="Domain\Address\IAddressDefinition.cs" />
+    <Compile Include="Domain\BillingInfo\BillingInfo.cs" />
+    <Compile Include="Domain\BillingInfo\BillingInfoDto.cs" />
+    <Compile Include="Domain\BillingInfo\IBillingInfoDefinition.cs" />
+    <Compile Include="Domain\ContactInfo\ContactInfo.cs" />
+    <Compile Include="Domain\ContactInfo\ContactInfoDto.cs" />
+    <Compile Include="Domain\ContactInfo\IContactInfoDefinition.cs" />
+    <Compile Include="Domain\Entity\Entity.cs" />
+    <Compile Include="Domain\Entity\EntityDto.cs" />
+    <Compile Include="Domain\Entity\EGender.cs" />
+    <Compile Include="Domain\Entity\IEntityDefinition.cs" />
+    <Compile Include="Domain\Entity\Receiver\EntityReceiver.cs" />
+    <Compile Include="Domain\Entity\Receiver\EntityReceiverDto.cs" />
+    <Compile Include="Domain\Entity\Receiver\IEntityReceiverDefinition.cs" />
+    <Compile Include="Domain\Entity\Supplier\EntitySupplier.cs" />
+    <Compile Include="Domain\Entity\Supplier\EntitySupplierDto.cs" />
+    <Compile Include="Domain\Entity\Supplier\IEntitySupplierDefinition.cs" />
+    <Compile Include="Domain\Exception\DbAccessException.cs" />
+    <Compile Include="Domain\Exception\DbDataIntegrityException.cs" />
+    <Compile Include="Domain\Exception\ResourceNotFoundException.cs" />
+    <Compile Include="Domain\Invoice\IInvoiceDefinition.cs" />
+    <Compile Include="Domain\Invoice\Invoice.cs" />
+    <Compile Include="Domain\Invoice\InvoiceDto.cs" />
+    <Compile Include="Domain\IObjectIdentifier.cs" />
+    <Compile Include="Domain\Item\EUnitType.cs" />
+    <Compile Include="Domain\Item\IInvoiceItemDefinition.cs" />
+    <Compile Include="Domain\Item\InvoiceItem.cs" />
+    <Compile Include="Domain\Item\InvoiceItemDto.cs" />
+    <Compile Include="Domain\Payment\EPaymentType.cs" />
+    <Compile Include="Domain\Payment\IInvoicePaymentDefinition.cs" />
+    <Compile Include="Domain\Payment\InvoicePayment.cs" />
+    <Compile Include="Domain\Payment\InvoicePaymentDto.cs" />
+    <Compile Include="Domain\SimpleObjectIdentifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

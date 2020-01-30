@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A716F3E5-4F85-4C4A-B65F-1BF3F8A43DCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Repository</RootNamespace>
+    <AssemblyName>Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Npgsql, Version=4.1.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7">
+      <HintPath>..\packages\Npgsql.4.1.2\lib\net461\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractCommand.cs" />
+    <Compile Include="AbstractRowMapper.cs" />
+    <Compile Include="Address\AddressEntity.cs" />
+    <Compile Include="Address\AddressRepository.cs" />
+    <Compile Include="Address\AddressRowMapper.cs" />
+    <Compile Include="Address\Command\AddressDeleteCommand.cs" />
+    <Compile Include="Address\Command\AddressFindAllCommand.cs" />
+    <Compile Include="Address\Command\AddressFindByIdCommand.cs" />
+    <Compile Include="Address\Command\AddressSaveCommand.cs" />
+    <Compile Include="BillingInfo\BillingInfoEntity.cs" />
+    <Compile Include="BillingInfo\BillingInfoRepository.cs" />
+    <Compile Include="BillingInfo\BillingInfoRowMapper.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoDeleteCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoFindAllCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoFindByIdCommand.cs" />
+    <Compile Include="BillingInfo\Command\BillingInfoSaveCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoDeleteCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoFindAllCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoFindByIdCommand.cs" />
+    <Compile Include="ContactInfo\Command\ContactInfoSaveCommand.cs" />
+    <Compile Include="ContactInfo\ContactInfoEntity.cs" />
+    <Compile Include="ContactInfo\ContactInfoRepository.cs" />
+    <Compile Include="ContactInfo\ContactInfoRowMapper.cs" />
+    <Compile Include="Entity\EntityEntity.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverDeleteCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverFindAllCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverFindByIdCommand.cs" />
+    <Compile Include="Entity\Receiver\Command\ReceiverSaveCommand.cs" />
+    <Compile Include="Entity\Receiver\ReceiverEntity.cs" />
+    <Compile Include="Entity\Receiver\ReceiverRepository.cs" />
+    <Compile Include="Entity\Receiver\ReceiverRowMapper.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierDeleteCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierFindAllCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierFindByIdCommand.cs" />
+    <Compile Include="Entity\Supplier\Command\SupplierSaveCommand.cs" />
+    <Compile Include="Entity\Supplier\SupplierEntity.cs" />
+    <Compile Include="Entity\Supplier\SupplierRepository.cs" />
+    <Compile Include="Entity\Supplier\SupplierRowMapper.cs" />
+    <Compile Include="IDataSourceConfig.cs" />
+    <Compile Include="DataSourceConfig.cs" />
+    <Compile Include="Invoice\Command\InvoiceDeleteCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllItemsCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindAllPaymentsCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceFindByIdCommand.cs" />
+    <Compile Include="Invoice\Command\InvoiceSaveCommand.cs" />
+    <Compile Include="Invoice\InvoiceEntity.cs" />
+    <Compile Include="Invoice\InvoiceRepository.cs" />
+    <Compile Include="Invoice\InvoiceRowMapper.cs" />
+    <Compile Include="Item\Command\InvoiceItemDeleteCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemFindAllCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemFindByIdCommand.cs" />
+    <Compile Include="Item\Command\InvoiceItemSaveCommand.cs" />
+    <Compile Include="Item\InvoiceItemEntity.cs" />
+    <Compile Include="Item\InvoiceItemRepository.cs" />
+    <Compile Include="Item\InvoiceItemRowMapper.cs" />
+    <Compile Include="Payment\Command\InvoicePaymentItemDeleteCommand.cs" />
+    <Compile Include="Payment\Command\InvoicePaymentItemFindAllCommand.cs" />
+    <Compile Include="Payment\Command\InvoicePaymentItemFindByIdCommand.cs" />
+    <Compile Include="Payment\Command\InvoicePaymentItemSaveCommand.cs" />
+    <Compile Include="Payment\InvoicePaymentEntity.cs" />
+    <Compile Include="Payment\InvoicePaymentRepository.cs" />
+    <Compile Include="Payment\InvoicePaymentRowMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{5f43281a-145e-44ff-8f65-0446a2773696}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

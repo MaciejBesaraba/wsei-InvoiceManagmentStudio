@@ -68,7 +68,7 @@ namespace Infrastructure
 
         public AppContext()
         {
-            _appProfile = new AppProfile();
+            _appProfile = AppProfile.FromConfig();
             
             _dataSourceConfig = new DataSourceConfig(
                 _appProfile.DataSource,

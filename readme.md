@@ -30,6 +30,8 @@ To keep our code clean and well organized we spend quite a lot of time designing
 
 We used `Hexagonal architecture` to separate different layers of logic.
 
+![Application architecutre diagram](./Documentation/Diagrams/Architecture/architecture.jpg)
+
 ### `Core`
 
 An application root and definition, provides:

@@ -1,1 +1,0 @@
-# InvoiceManagementStudio Changelog
